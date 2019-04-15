@@ -39,10 +39,11 @@ def fib2(n):
         return n
 
     arr = [0, 1]
-    # range(min, max)不包括max
+    # range(min, max)不包括max, 所以此处是n+1
     for i in range(2, n+1):
         arr.append(arr[i - 1] + arr[i - 2])
     return max(arr)
+
 
 result = fib2(8)
 print(result)
