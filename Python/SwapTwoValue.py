@@ -32,3 +32,14 @@ def swap3(value1, value2):
 
 tup = swap3(1, 2)
 print(tup)
+
+# 方式四 按位操作 异或
+def swap4(value1, value2):
+    value1 = value1 ^ value2
+    value2 = value1 ^ value2
+    value1 = value1 ^ value2
+
+    return value1, value2
+
+
+print(swap4(111, 222))
