@@ -31,17 +31,17 @@
 }
 
 - (void)add:(NSObject *)obj {
-    if (obj == nil) {
+    if ([self checkNil:obj]) {
         return;
     }
     _elements[_size++] = obj;
 }
 
 - (void)remove:(NSObject *)obj atIndex:(NSInteger)idx {
-    if (obj == nil) {
+    if ([self checkNil:obj]) {
         return;
     }
-    if (idx < 0 || idx >= _size) {
+    if ([self checkRangeException:idx]) {
         return;
     }
     for (NSInteger i = idx; i < _size - 1; i++) {
@@ -53,10 +53,10 @@
 }
 
 - (void)insert:(NSObject *)obj atIndex:(NSInteger)idx {
-    if (obj == nil) {
+    if ([self checkNil:obj]) {
         return;
     }
-    if (idx < 0 || idx >= _size) {
+    if ([self checkRangeException:idx]) {
         return;
     }
     
@@ -65,6 +65,13 @@
     }
     _elements[idx] = obj;
     _size += 1;
+}
+
+- (NSObject *)objectAtIndex:(NSInteger)idx {
+    if ([self checkRangeException:idx]) {
+        return nil;
+    }
+    return _elements[idx];
 }
 
 - (void)clear {
