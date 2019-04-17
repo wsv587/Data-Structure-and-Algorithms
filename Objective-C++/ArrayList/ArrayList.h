@@ -36,5 +36,6 @@
 // 判断ArrayList是否为空
 - (BOOL)isEmpty;
 // 获取ArrayList的大小
-- (NSUnteger)size;
+- (NSUInteger)size;
+
 @end
