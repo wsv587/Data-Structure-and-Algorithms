@@ -9,6 +9,7 @@
 #import "ArrayList.h"
 
 #define DEFAULT_SIZE 10
+#define ELEMENT_NOT_FOUND -1
 
 @interface ArrayList ()
 @property(nonatomic) NSUInteger size;
@@ -72,6 +73,34 @@
         return nil;
     }
     return _elements[idx];
+}
+
+- (NSInteger)indexOfObject:(NSObject *)obj {
+    if ([self checkNil:obj]) {
+        return -1;
+    }
+    for (NSInteger i = 0; i < _size; i++) {
+        if ([_elements[i] isEqual:obj]) {
+            return i;
+        }
+    }
+    return ELEMENT_NOT_FOUND;
+}
+
+- (NSObject *)setObject:(NSObject *)obj atIndex:(NSInteger)idx {
+    if ([self checkNil:obj] || [self checkRangeException:idx]) {
+        return nil;
+    }
+    NSObject *oldElement = _elements[idx];
+    _elements[idx] = obj;
+    return oldElement;
+}
+
+- (BOOL)contain:(NSObject *)obj {
+    if ([self checkNil:obj]) {
+        return NO;
+    }
+    return [self indexOfObject:obj] != ELEMENT_NOT_FOUND;
 }
 
 - (void)clear {

@@ -32,7 +32,10 @@
 // 获取元素的索引
 - (NSInteger)indexOfObject:(NSObject *)obj;
 // 更新某个索引下的元素
-- (void)setObject:(NSObject *)obj atIndex:(NSInteger)idx;
+- (NSObject *)setObject:(NSObject *)obj atIndex:(NSInteger)idx;
+// 是否包含某个元素
+- (BOOL)contain:(NSObject *)obj;
+
 // 清空ArrayList
 - (void)clear;
 
