@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2317bc6b-510d-4700-b567-e0a0b4fd153f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Objective-C++/ArrayList/ArrayList.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Objective-C++/ArrayList/ArrayList.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Objective-C++/ArrayList/main.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Objective-C++/Objective-C++.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../Objective-C++/Objective-C++.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Objective-C++/ArrayList/ArrayList.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Objective-C++/ArrayList/ArrayList.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Objective-C++/ArrayList/ArrayList.m" beforeDir="false" afterPath="$PROJECT_DIR$/../Objective-C++/ArrayList/ArrayList.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Objective-C++/Objective-C++.xcodeproj/project.xcworkspace/xcuserdata/sw.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/../Objective-C++/Objective-C++.xcodeproj/project.xcworkspace/xcuserdata/sw.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Objective-C++/Objective-C++.xcodeproj/xcuserdata/sw.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/../Objective-C++/Objective-C++.xcodeproj/xcuserdata/sw.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Objective-C++/SwapTwoValue/main.m" beforeDir="false" afterPath="$PROJECT_DIR$/../Objective-C++/SwapTwoValue/main.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,8 +26,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SwapTwoValue.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="41" column="22" lean-forward="true" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
+            <state relative-caret-position="274">
+              <caret line="41" column="25" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -147,8 +142,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SwapTwoValue.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="41" column="22" lean-forward="true" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
+        <state relative-caret-position="274">
+          <caret line="41" column="25" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="25" />
         </state>
       </provider>
     </entry>

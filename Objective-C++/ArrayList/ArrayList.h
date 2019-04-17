@@ -22,7 +22,7 @@
 // 移除末尾元素
 - (void)pop:(NSObject *)obj;
 // 移除所有这个元素
-- (void)remove:(NSObject *)obj;
+//- (void)remove:(NSObject *)obj;
 // 移除某个索引下的元素
 - (void)remove:(NSObject *)obj atIndex:(NSInteger)idx;
 // 插入元素
