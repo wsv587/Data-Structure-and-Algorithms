@@ -41,15 +41,30 @@
     if (obj == nil) {
         return;
     }
-    if (idx >= _size) {
+    if (idx < 0 || idx >= _size) {
         return;
     }
-    for (int i = idx; i < _size - 1; i++) {
+    for (NSInteger i = idx; i < _size - 1; i++) {
         _elements[i] = _elements[i+1];
     }
     // _elements[_size - 1] = nil; // 置空会crash
     [_elements removeLastObject];
     _size -= 1;
+}
+
+- (void)insert:(NSObject *)obj atIndex:(NSInteger)idx {
+    if (obj == nil) {
+        return;
+    }
+    if (idx < 0 || idx >= _size) {
+        return;
+    }
+    
+    for (NSInteger i = _size; i > idx; i--) { // idx后面所有的元素向后移动一位
+        _elements[i] = _elements[i - 1];
+    }
+    _elements[idx] = obj;
+    _size += 1;
 }
 
 - (void)clear {
@@ -63,5 +78,20 @@
 
 - (NSUInteger)size {
     return _size;
+}
+
+#pragma mark - Private
+- (BOOL)checkNil:(NSObject *)obj {
+    if (obj == nil) {
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL)checkRangeException:(NSInteger)idx {
+    if (idx < 0 || idx >= _size) {
+        return YES;
+    }
+    return NO;
 }
 @end
