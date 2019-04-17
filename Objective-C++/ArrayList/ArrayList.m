@@ -8,6 +8,27 @@
 
 #import "ArrayList.h"
 
-@implementation ArrayList
+#define DEFAULT_SIZE 10
 
+@interface ArrayList ()
+NSUInteger _size;
+NSMUtableArray *_elements;
+@end
+
+@implementation ArrayList
++ (instancetype)arraylist {
+    return [[ArrayList alloc] init];
+}
+
+-(instancetype)init {
+    if (self = [super init]) {
+        _elements = [NSMutableArray arrayWithCapacity:DEFAULT_SIZE];
+        _size = 0;
+    }
+    return self;
+}
+
+- (NSUInteger)size {
+    return _size;
+}
 @end

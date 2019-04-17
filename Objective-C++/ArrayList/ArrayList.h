@@ -13,6 +13,9 @@
 
 @interface ArrayList : NSObject
 
+// 初始化操作
++ (instancetype)arraylist;
+
 // 基本的增删改查操作
 // 添加元素
 - (void)add:(NSObject *)obj;
