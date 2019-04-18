@@ -18,6 +18,8 @@ int main(int argc, const char * argv[]) {
         NSLog(@"list: %@, size: %ld", list, list.size);
         [list insert:@666 atIndex:1];
         NSLog(@"list: %@, size: %ld", list, list.size);
+        [list removeObject:@3];
+        NSLog(@"list: %@, size: %ld", list, list.size);
 
         
     }

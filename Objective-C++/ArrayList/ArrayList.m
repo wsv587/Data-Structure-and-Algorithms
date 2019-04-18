@@ -46,10 +46,23 @@
     _size -= 1;
 }
 
-- (void)remove:(NSObject *)obj atIndex:(NSInteger)idx {
+- (void)removeObject:(NSObject *)obj {
     if ([self checkNil:obj]) {
         return;
     }
+    if ([self contains:obj] == NO) {
+        return;
+    }
+    NSInteger idx = [self indexOfObject:obj];
+    [self removeObjectAtIndex:idx];
+//    for (NSInteger i = idx; i < _size - 1; i++) {
+//        _elements[i] = _elements[i+1];
+//    }
+//    [_elements removeLastObject];
+//    _size -= 1;
+}
+
+- (void)removeObjectAtIndex:(NSInteger)idx {
     if ([self checkRangeException:idx]) {
         return;
     }
@@ -104,7 +117,7 @@
     return oldElement;
 }
 
-- (BOOL)contain:(NSObject *)obj {
+- (BOOL)contains:(NSObject *)obj {
     if ([self checkNil:obj]) {
         return NO;
     }
