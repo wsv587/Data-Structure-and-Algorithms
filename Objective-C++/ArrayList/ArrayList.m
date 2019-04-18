@@ -124,6 +124,17 @@
     return _size;
 }
 
+- (NSString *)description {
+    if ([self isEmpty] == YES) {
+        return [super description];
+    }
+    NSString *desc = _elements[0];
+    for (int i = 1; i < _size; i++) {
+        desc = [NSString stringWithFormat:@"%@,%@",desc, _elements[i]];
+    }
+    return desc;
+}
+
 #pragma mark - Private
 - (BOOL)checkNil:(NSObject *)obj {
     if (obj == nil) {

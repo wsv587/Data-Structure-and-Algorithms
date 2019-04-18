@@ -7,15 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ArrayList.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
-        
-        NSMutableArray *arrM = [NSMutableArray array];
-        arrM = @[@1,@2,@3];
-//        arrM[2] = nil;
+        ArrayList *list = [ArrayList arraylist];
+        [list add:@"1"];
+        [list add:@"2"];
+        [list add:@3];
+        NSLog(@"list: %@, size: %ld", list, list.size);
+        [list insert:@666 atIndex:1];
+        NSLog(@"list: %@, size: %ld", list, list.size);
+
         
     }
     return 0;
