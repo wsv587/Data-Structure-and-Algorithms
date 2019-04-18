@@ -38,6 +38,14 @@
     _elements[_size++] = obj;
 }
 
+- (void)pop:(NSObject *)obj {
+    if ([self checkNil:obj]) {
+        return;
+    }
+    [_elements removeLastObject];
+    _size -= 1;
+}
+
 - (void)remove:(NSObject *)obj atIndex:(NSInteger)idx {
     if ([self checkNil:obj]) {
         return;
