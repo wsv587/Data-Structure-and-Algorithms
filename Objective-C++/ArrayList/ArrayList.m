@@ -7,6 +7,7 @@
 //
 
 #import "ArrayList.h"
+#import "Assert.h"
 
 #define DEFAULT_SIZE 10
 #define ELEMENT_NOT_FOUND -1
@@ -32,24 +33,18 @@
 }
 
 - (void)add:(NSObject *)obj {
-    if ([self checkNil:obj]) {
-        return;
-    }
+    [Assert assertNil:obj];
     _elements[_size++] = obj;
 }
 
 - (void)pop:(NSObject *)obj {
-    if ([self checkNil:obj]) {
-        return;
-    }
+    [Assert assertNil:obj];
     [_elements removeLastObject];
     _size -= 1;
 }
 
 - (void)removeObject:(NSObject *)obj {
-    if ([self checkNil:obj]) {
-        return;
-    }
+    [Assert assertNil:obj];
     if ([self contains:obj] == NO) {
         return;
     }
@@ -63,9 +58,7 @@
 }
 
 - (void)removeObjectAtIndex:(NSInteger)idx {
-    if ([self checkRangeException:idx]) {
-        return;
-    }
+    [Assert assertArraySize:_size idx:idx];
     for (NSInteger i = idx; i < _size - 1; i++) {
         _elements[i] = _elements[i+1];
     }
@@ -75,12 +68,8 @@
 }
 
 - (void)insert:(NSObject *)obj atIndex:(NSInteger)idx {
-    if ([self checkNil:obj]) {
-        return;
-    }
-    if ([self checkRangeException:idx]) {
-        return;
-    }
+    [Assert assertNil:obj];
+    [Assert assertArraySize:_size idx:idx];
     
     for (NSInteger i = _size; i > idx; i--) { // idx后面所有的元素向后移动一位
         _elements[i] = _elements[i - 1];
@@ -90,16 +79,12 @@
 }
 
 - (NSObject *)objectAtIndex:(NSInteger)idx {
-    if ([self checkRangeException:idx]) {
-        return nil;
-    }
+    [Assert assertArraySize:_size idx:idx];
     return _elements[idx];
 }
 
 - (NSInteger)indexOfObject:(NSObject *)obj {
-    if ([self checkNil:obj]) {
-        return -1;
-    }
+    [Assert assertNil:obj];
     for (NSInteger i = 0; i < _size; i++) {
         if ([_elements[i] isEqual:obj]) {
             return i;
@@ -109,18 +94,15 @@
 }
 
 - (NSObject *)setObject:(NSObject *)obj atIndex:(NSInteger)idx {
-    if ([self checkNil:obj] || [self checkRangeException:idx]) {
-        return nil;
-    }
+    [Assert assertNil:obj];
+    [Assert assertArraySize:_size idx:idx];
     NSObject *oldElement = _elements[idx];
     _elements[idx] = obj;
     return oldElement;
 }
 
 - (BOOL)contains:(NSObject *)obj {
-    if ([self checkNil:obj]) {
-        return NO;
-    }
+    [Assert assertNil:obj];    
     return [self indexOfObject:obj] != ELEMENT_NOT_FOUND;
 }
 

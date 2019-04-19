@@ -20,8 +20,6 @@ int main(int argc, const char * argv[]) {
         NSLog(@"list: %@, size: %ld", list, list.size);
         [list removeObject:@3];
         NSLog(@"list: %@, size: %ld", list, list.size);
-
-        
     }
     return 0;
 }

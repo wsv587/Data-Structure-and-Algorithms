@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D02C4140226A0A8000AEE587 /* Assert.m in Sources */ = {isa = PBXBuildFile; fileRef = D02C413F226A0A8000AEE587 /* Assert.m */; };
+		D02C4143226A0C0A00AEE587 /* Assert.m in Sources */ = {isa = PBXBuildFile; fileRef = D02C413F226A0A8000AEE587 /* Assert.m */; };
 		D05FB1852263879800E78D2F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D05FB1842263879800E78D2F /* AppDelegate.m */; };
 		D05FB1882263879800E78D2F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D05FB1872263879800E78D2F /* ViewController.m */; };
 		D05FB1932263879A00E78D2F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D05FB1922263879A00E78D2F /* main.m */; };
@@ -58,6 +60,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D02C413E226A0A8000AEE587 /* Assert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Assert.h; sourceTree = "<group>"; };
+		D02C413F226A0A8000AEE587 /* Assert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Assert.m; sourceTree = "<group>"; };
 		D05FB1802263879800E78D2F /* Objective-C++.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Objective-C++.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D05FB1832263879800E78D2F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D05FB1842263879800E78D2F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -118,6 +122,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D02C4138226A08D200AEE587 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				D02C413E226A0A8000AEE587 /* Assert.h */,
+				D02C413F226A0A8000AEE587 /* Assert.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		D05FB1772263879800E78D2F = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +158,7 @@
 		D05FB1822263879800E78D2F /* Objective-C++ */ = {
 			isa = PBXGroup;
 			children = (
+				D02C4138226A08D200AEE587 /* Util */,
 				D05FB1832263879800E78D2F /* AppDelegate.h */,
 				D05FB1842263879800E78D2F /* AppDelegate.m */,
 				D05FB1862263879800E78D2F /* ViewController.h */,
@@ -343,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D05FB1882263879800E78D2F /* ViewController.m in Sources */,
+				D02C4140226A0A8000AEE587 /* Assert.m in Sources */,
 				D05FB1932263879A00E78D2F /* main.m in Sources */,
 				D05FB1852263879800E78D2F /* AppDelegate.m in Sources */,
 			);
@@ -368,6 +383,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D02C4143226A0C0A00AEE587 /* Assert.m in Sources */,
 				D0AF496C2267743F008CFBC4 /* main.m in Sources */,
 				D0AF49722267746D008CFBC4 /* ArrayList.m in Sources */,
 			);
