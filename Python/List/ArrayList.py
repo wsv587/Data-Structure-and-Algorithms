@@ -1,12 +1,16 @@
 import os
 
+
 class ArrayList:
+    ```创建一个arraylist对象```
+
     # size
     # defaultCount
     # elements
     # 对象方法、类方法、静态方法、对象属性、类属性前加两个下划线代表private私有
 
     __DEFAULT_COUNT = 10
+    # 限制对象只可以动态增加这两个对象属性
     __slots__ = ['__elements', '__size']  # 对象属性前加两个下划线代表私有，外界不可访问
 
     def __init__(self):
@@ -17,8 +21,7 @@ class ArrayList:
     # 类方法
     @classmethod
     def array_list(cls):
-        return cls()  #  也可以 return ArrayList()
-
+        return cls()  # 也可以 return ArrayList()
 
     # 对象方法
     def add(self, obj):
@@ -67,6 +70,7 @@ class ArrayList:
     def size(self):
         return self.__size
 
+
 # list = ArrayList()
 # list.add(12)
 # print(list.elements)
@@ -78,7 +82,7 @@ list = ArrayList.array_list()
 # print(list.__elements)
 
 list.add(12)
-print (list)
+print(list)
 list.add(24)
 list.remove_at_index(0)
 list.add(666)
