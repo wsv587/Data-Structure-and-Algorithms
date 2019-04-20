@@ -42,11 +42,7 @@ int main(int argc, const char * argv[]) {
         [list clear];
         NSLog(@"清空链表：%@", list);
         
-        NSLog(@"是否为空：%ld", [list isEmpty]);
-        
-
-
-
+        NSLog(@"是否为空：%d", [list isEmpty]);
     }
     return 0;
 }
