@@ -7,7 +7,7 @@
 //
 
 #import "LinkList.h"
-#define DEFAULT_SIZE 10
+
 // 定义Node私有类（Java中叫内部类）
 
 @interface Node : NSObject
