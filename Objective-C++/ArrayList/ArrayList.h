@@ -20,7 +20,7 @@
 // 添加元素
 - (void)add:(NSObject *)obj;
 // 移除末尾元素
-- (void)pop:(NSObject *)obj;
+- (void)pop;
 // 移除指定元素
 - (void)removeObject:(NSObject *)obj;
 // 移除某个索引下的元素

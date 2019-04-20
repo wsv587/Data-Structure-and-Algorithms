@@ -37,8 +37,7 @@
     _elements[_size++] = obj;
 }
 
-- (void)pop:(NSObject *)obj {
-    [Assert assertNil:obj];
+- (void)pop {
     [_elements removeLastObject];
     _size -= 1;
 }
