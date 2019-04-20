@@ -41,7 +41,6 @@
 
 -(instancetype)init {
     if (self = [super init]) {
-        _elements = [NSMutableArray arrayWithCapacity:DEFAULT_SIZE];
         _first = nil;
         _size = 0;
     }
@@ -82,6 +81,7 @@
     // 移除头结点需要特殊处理
     if ([obj isEqualTo:_first.data]) {
         _first = _first.next;
+        _size -= 1;
         return;
     }
     
@@ -160,6 +160,26 @@
 
 - (NSUInteger)size {
     return _size;
+}
+
+#pragma Override
+- (NSString *)description {
+    if (_size == 0) {
+        return @"empty linklist";
+    }
+    NSString *desc = _first.data;
+    if (_size == 1) {
+        return _first.data;
+    }
+    Node *node = _first;
+    for (NSUInteger i = 0; i < _size; i++) {
+        desc = [NSString stringWithFormat:@"%@,%@",desc, node.next.data];
+        node = node.next;
+        if (node.next == nil) {
+            break;
+        }
+    }
+    return desc;
 }
 
 #pragma mark - Private
