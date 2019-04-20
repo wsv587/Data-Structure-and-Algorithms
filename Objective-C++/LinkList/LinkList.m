@@ -26,6 +26,9 @@
 
 @end
 
+/**
+ * 如果LinkList缓存了尾节点，那么他的添加操作的复杂度将是O(1),删除尾节点的复杂度也是O(1)
+ */
 @interface LinkList()
 @property(nonatomic) Node *first;                   // 链表的头结点
 @property(nonatomic) NSUInteger size;
@@ -76,7 +79,16 @@
 }
 
 - (void)removeObject:(NSObject *)obj {
+    // 移除头结点需要特殊处理
+    if ([obj isEqualTo:_first.data]) {
+        _first = _first.next;
+        return;
+    }
     
+    Node *preNode = [self p_preNodeWithObject:obj];
+    preNode.next = preNode.next.next;
+
+    _size -= 1;
 }
 
 - (NSObject *)removeObjectAtIndex:(NSInteger)idx {
@@ -103,19 +115,43 @@
 }
 
 - (NSInteger)indexOfObject:(NSObject *)obj {
-    
+    Node *node = _first;
+    for (NSUInteger i = 0; i < _size; i++) {
+        if ([node.data isEqual:obj]) {
+            return i;
+        }
+        node = node.next;
+    }
+    return NSNotFound;
 }
 
 - (NSObject *)setObject:(NSObject *)obj atIndex:(NSInteger)idx {
-    
+    Node *node = _first;
+    NSObject *oldElement = _first.data;
+    if (idx == 0) {
+        node.data = obj;
+    } else {
+        node = [self p_nodeWithIndex:idx];
+        oldElement = node.data;
+        node.data = obj;
+    }
+    return oldElement;
 }
 
 - (BOOL)contains:(NSObject *)obj {
-    
+    Node *node = _first;
+    for (NSUInteger i = 0; i < _size; i++) {
+        if ([node.data isEqual:obj]) {
+            return true;
+        }
+        node = node.next;
+    }
+    return NSNotFound;
 }
 
 - (void)clear {
-    
+    _size = 0;
+    _first = nil;
 }
 
 - (BOOL)isEmpty {
@@ -127,14 +163,43 @@
 }
 
 #pragma mark - Private
-/* 获取指定位置的节点
- * idx：位置
+/** 获取指定位置的节点
+ * idx: 位置
  */
 - (Node *)p_nodeWithIndex:(NSUInteger)idx {
     Node *node = _first;
-    for (NSUInteger i = 0; i <= idx; i++) {
+    for (NSUInteger i = 0; i < idx; i++) {
         node = node.next;
     }
     return node;
+}
+/** 获取某个元素所在的节点
+ * obj: 元素
+ */
+- (Node *)p_nodeWithObject:(NSObject *)obj {
+    Node *node = _first;
+    for (NSUInteger i = 0; i < _size; i++) {
+        if ([node.data isEqual:obj]) {
+            return node;
+        }
+        node = node.next;
+    }
+    return nil;
+}
+/** 获取某个元素所在节点的前驱
+ * obj: 元素
+ * 注意: obj如果存在于头结点或不存在于链表中都会返回nil.因为头结点无前驱.所以这个方法无法区分obj不存在于链表 和 obj存在于头结点的情况. 所以obj是否存在于头结点还需要单独处理
+ */
+- (Node *)p_preNodeWithObject:(NSObject *)obj {
+    Node *node = _first;
+    Node *preNode = nil;
+    for (NSUInteger i = 0; i < _size; i++) {
+        if ([node.data isEqual:obj]) {
+            return preNode;
+        }
+        preNode = node;
+        node = node.next;
+    }
+    return preNode;
 }
 @end
