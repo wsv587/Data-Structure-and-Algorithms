@@ -26,18 +26,25 @@ class LinkList:
         if self.size == 0:
             self.first = Node(obj, self.first)
         else:
-            node = self.__node(self.size - 1)
-            node.next = Node(obj, node.next)
+            prev = self.__node(self.size - 1)
+            prev.next = Node(obj, prev.next)
+        self.size += 1
 
     def insert(self, obj, idx):
         if idx == 0:
             self.first = Node(obj, self.first)
         else:
-            node = self.__node(idx - 1)
-            node.next = Node(obj, node.next)
+            prev = self.__node(idx - 1)
+            prev.next = Node(obj, prev.next)
+        self.size += 1
 
     def remove_at_index(self, idx):
-        pass
+        if idx == 0:
+            self.first = self.first.next
+        else:
+            prev = self.__node(idx - 1)
+            prev.next = prev.next.next
+        self.size -= 1
 
     def remove(self, obj):
         pass
