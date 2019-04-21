@@ -5,6 +5,10 @@ class Node:
         self.data = None
         self.next = None
 
+    def __init__(self, data, next):
+        self.data = data
+        self.next = next
+
 
 class LinkList:
     __slots__ = ['first', 'last', 'size']
@@ -19,7 +23,11 @@ class LinkList:
         self.size = 0
 
     def add(self, obj):
-        pass
+        if self.size == 0:
+            self.first = Node(obj, self.first)
+        else:
+            node = self.__node(self.size - 1)
+            node.next = Node(obj, node.next)
 
     def remove_at_index(self, idx):
         pass
@@ -48,6 +56,11 @@ class LinkList:
     def size(self):
         return self.size
 
+    def __node(self, idx):
+        node = self.first
+        for i in range(0, self.size - 1):
+            node = node.next
+        return node
 
 list = LinkList()
 list.__element = [2]
