@@ -49,10 +49,12 @@ class LinkList:
     def remove(self, obj):
         prev = self.__prev_node_of(obj)
         prev.next = prev.next.next
+        self.size -= 1
 
     def pop(self):
         prev = self.__node(self.size - 1)
         prev.next = prev.next.next
+        self.size -= 1
 
     def object_at_index(self, idx):
         node = self.__node(idx)
@@ -63,13 +65,19 @@ class LinkList:
         return node.data
 
     def contains(self, obj):
-        pass
+        node = self.first
+        for _ in range(0, self.size - 1):
+            if node.data is obj:
+                return True
+            node = node.next
+        return False
 
     def is_empty(self):
         return self.size == 0
 
     def clear(self):
         self.first = None
+        self.size = 0
 
     def size(self):
         return self.size
