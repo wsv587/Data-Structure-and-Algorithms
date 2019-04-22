@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * 非递归反转单链表
  */
-- (void)reverseUnusingRecursion;
+- (Node *)reverseUnusingRecursion:(Node *)head;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -23,7 +23,7 @@
  */
 @interface LinkList()
 //@property(nonatomic) Node *first;                   // 链表的头结点
-//@property(nonatomic) NSUInteger size;
+@property(nonatomic) NSUInteger size;
 @end
 
 @implementation LinkList

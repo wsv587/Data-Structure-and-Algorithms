@@ -10,9 +10,10 @@
 
 @implementation LinkList (leetcode)
 
-//first -> node1 -> node2 -> node3 -> node4
-//         node1 <- node2 <- node3 <- node4
-//first -> node4 -> node3 -> node2 -> node1
+//first -> node1 -> node2 -> node3 -> node4 -> nil
+//  nil <- node1 <- node2 <- node3 <- node4 <- first
+//first -> node4 -> node3 -> node2 -> node1 -> nil
+//1, 2, 3, 4, 5, 6
 - (Node *)reverseUsingRecursion:(Node *)head {
     if (head == nil || head.next == nil) {
         return head;
@@ -23,8 +24,19 @@
     return newHead;
 }
 
-- (void)reverseUnusingRecursion {
-    
+- (Node *)reverseUnusingRecursion:(Node *)head {
+    if (head == nil || head.next == nil) {
+        return head;
+    }
+    Node *newHead = nil;
+    Node *tmp = nil;
+    while (head != nil) {
+        tmp = head.next;
+        head.next = newHead;
+        newHead = head;
+        head = tmp;
+    }
+    return newHead;
 }
 
 @end

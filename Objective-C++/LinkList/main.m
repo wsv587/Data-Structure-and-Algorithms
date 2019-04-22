@@ -44,9 +44,14 @@ int main(int argc, const char * argv[]) {
         NSLog(@"清空链表：%@", list);
         
         NSLog(@"是否为空：%d", [list isEmpty]);
+        [list add:@"5"];
+        [list add:@"6"];
+        list.first = [list reverseUsingRecursion:list.first];
+        NSLog(@"%@", list);
         
         list.first = [list reverseUsingRecursion:list.first];
         NSLog(@"%@", list);
+
     }
     return 0;
 }
