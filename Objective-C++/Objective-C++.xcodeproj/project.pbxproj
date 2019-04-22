@@ -13,6 +13,8 @@
 		D05FB1852263879800E78D2F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D05FB1842263879800E78D2F /* AppDelegate.m */; };
 		D05FB1882263879800E78D2F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D05FB1872263879800E78D2F /* ViewController.m */; };
 		D05FB1932263879A00E78D2F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D05FB1922263879A00E78D2F /* main.m */; };
+		D08C90FF226E336200896D5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D08C90FE226E336200896D5F /* main.m */; };
+		D08C9105226E337F00896D5F /* DualLinkList.m in Sources */ = {isa = PBXBuildFile; fileRef = D08C9104226E337F00896D5F /* DualLinkList.m */; };
 		D0AF4956226636B9008CFBC4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AF4955226636B9008CFBC4 /* main.m */; };
 		D0AF496122676D94008CFBC4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AF496022676D94008CFBC4 /* main.m */; };
 		D0AF496C2267743F008CFBC4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AF496B2267743F008CFBC4 /* main.m */; };
@@ -22,6 +24,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		D08C90FA226E336200896D5F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		D0AF4951226636B9008CFBC4 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -72,6 +83,10 @@
 		D05FB1872263879800E78D2F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D05FB1912263879A00E78D2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D05FB1922263879A00E78D2F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D08C90FC226E336200896D5F /* DualLinkList */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DualLinkList; sourceTree = BUILT_PRODUCTS_DIR; };
+		D08C90FE226E336200896D5F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D08C9103226E337F00896D5F /* DualLinkList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DualLinkList.h; sourceTree = "<group>"; };
+		D08C9104226E337F00896D5F /* DualLinkList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DualLinkList.m; sourceTree = "<group>"; };
 		D0AF4953226636B9008CFBC4 /* Fibonacci */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Fibonacci; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0AF4955226636B9008CFBC4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D0AF495E22676D94008CFBC4 /* SwapTwoValue */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwapTwoValue; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +103,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		D05FB17D2263879800E78D2F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D08C90F9226E336200896D5F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -142,6 +164,7 @@
 				D0AF495F22676D94008CFBC4 /* SwapTwoValue */,
 				D0AF496A2267743F008CFBC4 /* ArrayList */,
 				D0AF49782268DF00008CFBC4 /* LinkList */,
+				D08C90FD226E336200896D5F /* DualLinkList */,
 				D05FB1812263879800E78D2F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -154,6 +177,7 @@
 				D0AF495E22676D94008CFBC4 /* SwapTwoValue */,
 				D0AF49692267743F008CFBC4 /* ArrayList */,
 				D0AF49772268DF00008CFBC4 /* LinkList */,
+				D08C90FC226E336200896D5F /* DualLinkList */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -170,6 +194,16 @@
 				D05FB1922263879A00E78D2F /* main.m */,
 			);
 			path = "Objective-C++";
+			sourceTree = "<group>";
+		};
+		D08C90FD226E336200896D5F /* DualLinkList */ = {
+			isa = PBXGroup;
+			children = (
+				D08C90FE226E336200896D5F /* main.m */,
+				D08C9103226E337F00896D5F /* DualLinkList.h */,
+				D08C9104226E337F00896D5F /* DualLinkList.m */,
+			);
+			path = DualLinkList;
 			sourceTree = "<group>";
 		};
 		D0AF4954226636B9008CFBC4 /* Fibonacci */ = {
@@ -229,6 +263,23 @@
 			productName = "Objective-C++";
 			productReference = D05FB1802263879800E78D2F /* Objective-C++.app */;
 			productType = "com.apple.product-type.application";
+		};
+		D08C90FB226E336200896D5F /* DualLinkList */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D08C9102226E336200896D5F /* Build configuration list for PBXNativeTarget "DualLinkList" */;
+			buildPhases = (
+				D08C90F8226E336200896D5F /* Sources */,
+				D08C90F9226E336200896D5F /* Frameworks */,
+				D08C90FA226E336200896D5F /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DualLinkList;
+			productName = DualLinkList;
+			productReference = D08C90FC226E336200896D5F /* DualLinkList */;
+			productType = "com.apple.product-type.tool";
 		};
 		D0AF4952226636B9008CFBC4 /* Fibonacci */ = {
 			isa = PBXNativeTarget;
@@ -310,6 +361,9 @@
 					D05FB17F2263879800E78D2F = {
 						CreatedOnToolsVersion = 10.2;
 					};
+					D08C90FB226E336200896D5F = {
+						CreatedOnToolsVersion = 10.2;
+					};
 					D0AF4952226636B9008CFBC4 = {
 						CreatedOnToolsVersion = 10.2;
 					};
@@ -342,6 +396,7 @@
 				D0AF495D22676D94008CFBC4 /* SwapTwoValue */,
 				D0AF49682267743F008CFBC4 /* ArrayList */,
 				D0AF49762268DF00008CFBC4 /* LinkList */,
+				D08C90FB226E336200896D5F /* DualLinkList */,
 			);
 		};
 /* End PBXProject section */
@@ -365,6 +420,15 @@
 				D02C4140226A0A8000AEE587 /* Assert.m in Sources */,
 				D05FB1932263879A00E78D2F /* main.m in Sources */,
 				D05FB1852263879800E78D2F /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D08C90F8226E336200896D5F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D08C90FF226E336200896D5F /* main.m in Sources */,
+				D08C9105226E337F00896D5F /* DualLinkList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,6 +617,30 @@
 			};
 			name = Release;
 		};
+		D08C9100226E336200896D5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PT5M85RBBU;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D08C9101226E336200896D5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PT5M85RBBU;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		D0AF4957226636B9008CFBC4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -666,6 +754,15 @@
 			buildConfigurations = (
 				D05FB1972263879A00E78D2F /* Debug */,
 				D05FB1982263879A00E78D2F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D08C9102226E336200896D5F /* Build configuration list for PBXNativeTarget "DualLinkList" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D08C9100226E336200896D5F /* Debug */,
+				D08C9101226E336200896D5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
