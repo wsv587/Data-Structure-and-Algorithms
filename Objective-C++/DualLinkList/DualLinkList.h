@@ -10,9 +10,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@interface DualNode: NSObject
+@property(nonatomic, readonly) DualNode *next;
+@property(nonatomic, readonly) DualNode *prev;
+@property(nonatomic, readonly) NSObject *data;
+@end
+
 @interface DualLinkList : NSObject
-@property(nonatomic) Node *first;                   // 链表的头结点，此处设置为k读写是为了在category中可访问
-@property(nonatomic) Node *last;                   
 @property(nonatomic, readonly) NSUInteger size;     // 链表的长度
 
 // 初始化操作
