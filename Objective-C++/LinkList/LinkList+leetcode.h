@@ -19,6 +19,11 @@ NS_ASSUME_NONNULL_BEGIN
  * 非递归反转单链表
  */
 - (Node *)reverseUnusingRecursion:(Node *)head;
+
+/**
+ * 判断一个单链表是否有环
+ */
+- (BOOL)isCircleLinkList:(Node *)head;
 @end
 
 NS_ASSUME_NONNULL_END

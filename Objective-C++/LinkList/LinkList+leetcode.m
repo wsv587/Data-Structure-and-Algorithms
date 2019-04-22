@@ -39,4 +39,19 @@
     return newHead;
 }
 
+- (BOOL)isCircleLinkList:(Node *)head {
+    if (head == nil) {
+        return NO;
+    }
+    Node *slow = head;
+    Node *fast = head.next;
+    while (fast != nil && fast.next != nil) {
+        slow = slow.next;
+        fast = fast.next.next;
+        if (slow == fast) {
+            return YES;
+        }
+    }
+    return NO;
+}
 @end
