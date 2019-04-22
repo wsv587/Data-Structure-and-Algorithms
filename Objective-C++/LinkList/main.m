@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "LinkList.h"
+#import "LinkList+leetcode.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -39,10 +40,13 @@ int main(int argc, const char * argv[]) {
         
         NSLog(@"是否包含：%d",[list contains:@"1"]);
         
-        [list clear];
+//        [list clear];
         NSLog(@"清空链表：%@", list);
         
         NSLog(@"是否为空：%d", [list isEmpty]);
+        
+        list.first = [list reverseUsingRecursion:list.first];
+        NSLog(@"%@", list);
     }
     return 0;
 }

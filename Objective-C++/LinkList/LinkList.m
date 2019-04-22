@@ -8,14 +8,6 @@
 
 #import "LinkList.h"
 
-// 定义Node私有类（Java中叫内部类）
-
-@interface Node : NSObject
-@property(nonatomic) id data;       // 节点存储的数据
-@property(nonatomic) Node *next;    // 节点指向的后继节点
-
-@end
-
 @implementation Node
 + (instancetype)nodeWithData:(NSObject *)data next:(Node *)next {
     Node *node = [[Node alloc] init];
@@ -30,8 +22,8 @@
  * 如果LinkList缓存了尾节点，那么他的添加操作的复杂度将是O(1),删除尾节点的复杂度也是O(1)
  */
 @interface LinkList()
-@property(nonatomic) Node *first;                   // 链表的头结点
-@property(nonatomic) NSUInteger size;
+//@property(nonatomic) Node *first;                   // 链表的头结点
+//@property(nonatomic) NSUInteger size;
 @end
 
 @implementation LinkList
