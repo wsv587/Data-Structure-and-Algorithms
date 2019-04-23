@@ -10,6 +10,18 @@
 
 @implementation DualNode
 
++ (instancetype)nodeWithData:(NSObject *)data prev:(DualNode *)prev next:(DualNode *)next {
+    return [[DualNode alloc] initWithData:data prev:prev next:next];
+}
+
+- (instancetype)initWithData:(NSObject *)data prev:(DualNode *)prev next:(DualNode *)next {
+    if (self = [super init]) {
+        _data = data;
+        _prev = prev;
+        _next = next;
+    }
+    return self;
+}
 
 @end
 

@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, readonly) DualNode *next;
 @property(nonatomic, readonly) DualNode *prev;
 @property(nonatomic, readonly) NSObject *data;
+
 @end
 
 // 双向链表
