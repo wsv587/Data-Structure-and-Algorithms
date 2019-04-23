@@ -33,5 +33,11 @@
 @end
 
 @implementation DualLinkList
-
++ (instancetype)linklist {
+    DualLinkList *list = [[DualLinkList alloc] init];
+    list.size = 0;
+    list.first = nil;
+    list.last = nil;
+    return list;
+}
 @end
