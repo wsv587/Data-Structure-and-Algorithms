@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+// 双向链表节点
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DualNode: NSObject
@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, readonly) NSObject *data;
 @end
 
+// 双向链表
 @interface DualLinkList : NSObject
 @property(nonatomic, readonly) NSUInteger size;     // 链表的长度
 
