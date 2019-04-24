@@ -72,10 +72,14 @@
 }
 
 - (void)insert:(NSObject *)obj atIndex:(NSInteger)idx {
-    DualNode *oldNode = [self p_nodeAtIndex:idx];
-    DualNode *newNode = [DualNode nodeWithData:obj prev:oldNode.prev next:oldNode];
-    oldNode.prev.next = newNode;
-    oldNode.prev = newNode;
+    if (idx == 0) {
+        
+    } else {
+        DualNode *oldNode = [self p_nodeAtIndex:idx];
+        DualNode *newNode = [DualNode nodeWithData:obj prev:oldNode.prev next:oldNode];
+        oldNode.prev.next = newNode;
+        oldNode.prev = newNode;
+    }
     self.size += 1;
 }
 
@@ -85,13 +89,13 @@
     if (idx <= (self.size >> 1)) {
         // 前半部分，使用first指针查找
         node = self.first;
-        for (NSInteger i = 0; i <= idx; i++) {
+        for (NSInteger i = 0; i < idx; i++) {
             node = node.next;
         }
     } else {
         // 后半部分，使用last指针查找
         node = self.last;
-        for (NSInteger i = self.size - 1; i >= idx; i--) {
+        for (NSInteger i = self.size - 1; i > idx; i--) {
             node = node.prev;
         }
     }
