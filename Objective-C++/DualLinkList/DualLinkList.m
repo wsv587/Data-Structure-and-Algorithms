@@ -73,8 +73,18 @@
 
 - (void)insert:(NSObject *)obj atIndex:(NSInteger)idx {
     if (idx == 0) {
-        
+        // 向链表头部插入
+        if (self.size == 0) {
+            // 链表为空
+            [self add:obj];
+        } else {
+            // 链表非空
+            DualNode *newNode = [DualNode nodeWithData:obj prev:nil next:self.first];
+            self.first.prev = newNode;
+            self.first = newNode;
+        }
     } else {
+        // 向链表中间插入
         DualNode *oldNode = [self p_nodeAtIndex:idx];
         DualNode *newNode = [DualNode nodeWithData:obj prev:oldNode.prev next:oldNode];
         oldNode.prev.next = newNode;
