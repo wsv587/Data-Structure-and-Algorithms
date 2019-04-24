@@ -126,7 +126,6 @@
     return removedNode.data;
 }
 
-
 - (NSString *)description {
     DualNode *node = self.first;
     NSString *desc = [NSString stringWithFormat:@"null_%@_%@",node.data, node.next];
