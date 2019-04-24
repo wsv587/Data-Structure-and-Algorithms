@@ -84,7 +84,7 @@
             self.first = newNode;
         }
     } else {
-        // 向链表中间插入
+        // 向链表中间或末尾插入
         DualNode *oldNode = [self p_nodeAtIndex:idx];
         DualNode *newNode = [DualNode nodeWithData:obj prev:oldNode.prev next:oldNode];
         oldNode.prev.next = newNode;
@@ -92,6 +92,30 @@
     }
     self.size += 1;
 }
+
+- (NSObject *)removeObjectAtIndex:(NSInteger)idx {
+    DualNode *removedNode = nil;
+    if (idx == 0) {
+        removedNode = self.first;
+        if (self.size == 1) {
+            self.first = nil;
+            self.last = nil;
+        } else {
+            self.first = removedNode.next;
+            self.first.prev = nil;
+        }
+    } else {
+        // 移除链表中间或末尾节点
+        removedNode = [self p_nodeAtIndex:idx];
+        removedNode.prev.next = removedNode.next;
+        removedNode.next.prev = removedNode.prev;
+    }
+    
+    self.size -= 1;
+    return removedNode.data;
+}
+
+#pragma mark - Private
 
 //kSelectorHuge1Bit
 - (DualNode *)p_nodeAtIndex:(NSInteger)idx {
