@@ -8,6 +8,14 @@
 
 #import "DualLinkList.h"
 
+@interface DualNode ()
+@property(nonatomic) DualNode *next;
+@property(nonatomic) DualNode *prev;
+@property(nonatomic) NSObject *data;
+
+
+@end
+
 @implementation DualNode
 
 + (instancetype)nodeWithData:(NSObject *)data prev:(DualNode *)prev next:(DualNode *)next {
@@ -39,5 +47,51 @@
     list.first = nil;
     list.last = nil;
     return list;
+}
+
+- (void)add:(NSObject *)obj {
+    if (_size == 0) {
+        self.first = [DualNode nodeWithData:obj prev:nil next:nil];
+        self.last = self.first;
+    } else {
+        // 获取last节点
+        // 插入newlast
+        // 更新last节点
+        
+        // newNode.prev = last
+        // last.next = newNode
+        // newNode.next = nil
+        // self.last = newNode
+        
+        self.last.next = [DualNode nodeWithData:obj prev:self.last next:nil];
+        self.last = self.last.next;
+        
+    }
+    
+    self.size += 1;
+}
+
+- (void)insert:(NSObject *)obj atIndex:(NSInteger)idx {
+    
+}
+
+//kSelectorHuge1Bit
+- (DualNode *)p_nodeAtIndex:(NSInteger)idx {
+    DualNode *node = nil;
+    if (idx <= (self.size >> 1)) {
+        // 前半部分，使用first指针查找
+        node = self.first;
+        for (NSInteger i = 0; i <= idx; i++) {
+            node = node.next;
+        }
+    } else {
+        // 后半部分，使用last指针查找
+        node = self.last;
+        for (NSInteger i = self.size - 1; i >= idx; i--) {
+            node = node.prev;
+        }
+    }
+    
+    return node;
 }
 @end

@@ -16,7 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, readonly) NSObject *data;
 
 @end
-
+/**
+ * 使用双向链表可以提升链表的综合性能
+ * 双向链表有有两个指针first和last，分别指向链表的头结点和尾节点，这样可以提高链表的查找性能
+ */
 // 双向链表
 @interface DualLinkList : NSObject
 @property(nonatomic, readonly) NSUInteger size;     // 链表的长度
