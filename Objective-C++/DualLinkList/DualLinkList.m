@@ -72,7 +72,11 @@
 }
 
 - (void)insert:(NSObject *)obj atIndex:(NSInteger)idx {
-    
+    DualNode *oldNode = [self p_nodeAtIndex:idx];
+    DualNode *newNode = [DualNode nodeWithData:obj prev:oldNode.prev next:oldNode];
+    oldNode.prev.next = newNode;
+    oldNode.prev = newNode;
+    self.size += 1;
 }
 
 //kSelectorHuge1Bit
