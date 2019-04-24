@@ -31,6 +31,10 @@
     return self;
 }
 
+- (NSString *)description {
+    return self.data;
+}
+
 @end
 
 @interface DualLinkList ()
@@ -84,11 +88,17 @@
             self.first = newNode;
         }
     } else {
-        // 向链表中间或末尾插入
-        DualNode *oldNode = [self p_nodeAtIndex:idx];
-        DualNode *newNode = [DualNode nodeWithData:obj prev:oldNode.prev next:oldNode];
-        oldNode.prev.next = newNode;
-        oldNode.prev = newNode;
+        if (idx == self.size) {
+            // 向链表末尾插入
+            [self add:obj];
+        } else {
+            // 向链表中间插入
+            DualNode *oldNode = [self p_nodeAtIndex:idx];
+            DualNode *newNode = [DualNode nodeWithData:obj prev:oldNode.prev next:oldNode];
+            oldNode.prev.next = newNode;
+            oldNode.prev = newNode;
+        }
+        
     }
     self.size += 1;
 }
@@ -106,6 +116,7 @@
         }
     } else {
         // 移除链表中间或末尾节点
+        // 这里利用了oc的可以给nil发送消息语言特性，不需要对末尾节点进行处理
         removedNode = [self p_nodeAtIndex:idx];
         removedNode.prev.next = removedNode.next;
         removedNode.next.prev = removedNode.prev;
@@ -113,6 +124,19 @@
     
     self.size -= 1;
     return removedNode.data;
+}
+
+
+- (NSString *)description {
+    DualNode *node = self.first;
+    NSString *desc = [NSString stringWithFormat:@"null_%@_%@",node.data, node.next];
+    for (int i = 0; i < self.size - 1; i++) {
+        node = node.next;
+        desc = [NSString stringWithFormat:@"%@, %@_%@_%@", desc, node.prev, node.data, node.next];
+    }
+    
+    [NSString stringWithFormat:@"%@, %@_%@_null",desc, self.last.prev, self.last.data];
+    return desc;
 }
 
 #pragma mark - Private
