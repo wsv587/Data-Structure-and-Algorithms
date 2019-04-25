@@ -32,7 +32,12 @@
 }
 
 - (NSString *)description {
-    return self.data;
+    if ([self.data isKindOfClass:[NSString class]]) {
+        return (NSString *)self.data;
+    } else if ([self.data isKindOfClass:[NSNumber class]]) {
+        return [(NSNumber *)self.data stringValue];
+    }
+    return (NSString *)self.data;
 }
 
 @end
@@ -98,7 +103,6 @@
             oldNode.prev.next = newNode;
             oldNode.prev = newNode;
         }
-        
     }
     self.size += 1;
 }
@@ -115,11 +119,17 @@
             self.first.prev = nil;
         }
     } else {
-        // 移除链表中间或末尾节点
-        // 这里利用了oc的可以给nil发送消息语言特性，不需要对末尾节点进行处理
-        removedNode = [self p_nodeAtIndex:idx];
-        removedNode.prev.next = removedNode.next;
-        removedNode.next.prev = removedNode.prev;
+        if (idx == self.size - 1) {
+            // 移除链表末尾节点
+            removedNode = self.last;
+            self.last = self.last.prev;
+            self.last.next = nil;
+        } else {
+            // 移除链表中间节点
+            removedNode = [self p_nodeAtIndex:idx];
+            removedNode.prev.next = removedNode.next;
+            removedNode.next.prev = removedNode.prev;
+        }
     }
     
     self.size -= 1;
@@ -129,7 +139,7 @@
 - (NSString *)description {
     DualNode *node = self.first;
     NSString *desc = [NSString stringWithFormat:@"null_%@_%@",node.data, node.next];
-    for (int i = 0; i < self.size - 1; i++) {
+    for (int i = 0; i < self.size - 2; i++) {
         node = node.next;
         desc = [NSString stringWithFormat:@"%@, %@_%@_%@", desc, node.prev, node.data, node.next];
     }
@@ -143,7 +153,7 @@
 //kSelectorHuge1Bit
 - (DualNode *)p_nodeAtIndex:(NSInteger)idx {
     DualNode *node = nil;
-    if (idx <= (self.size >> 1)) {
+    if (idx < (self.size >> 1)) {
         // 前半部分，使用first指针查找
         node = self.first;
         for (NSInteger i = 0; i < idx; i++) {
@@ -156,7 +166,6 @@
             node = node.prev;
         }
     }
-    
     return node;
 }
 @end
