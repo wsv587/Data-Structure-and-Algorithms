@@ -86,6 +86,7 @@
         if (self.size == 0) {
             // 链表为空
             [self add:obj];
+            return;
         } else {
             // 链表非空
             DualNode *newNode = [DualNode nodeWithData:obj prev:nil next:self.first];
@@ -96,6 +97,7 @@
         if (idx == self.size) {
             // 向链表末尾插入
             [self add:obj];
+            return;
         } else {
             // 向链表中间插入
             DualNode *oldNode = [self p_nodeAtIndex:idx];
@@ -134,6 +136,10 @@
     
     self.size -= 1;
     return removedNode.data;
+}
+
+- (NSUInteger)size {
+    return _size;
 }
 
 - (NSString *)description {
