@@ -138,19 +138,45 @@
     return removedNode.data;
 }
 
-- (NSUInteger)size {
-    return _size;
+//- (void)clear {
+//    DualNode *node = self.first;
+//    for (int i = 0; i < self.size; i++) {
+//        node.prev = nil;
+//        node = node.next;
+//    }
+//    self.first = nil;
+//    self.last = nil;
+//    self.size = 0;
+//}
+
+- (BOOL)isEmpty {
+    return self.size == 0;
 }
+
+- (BOOL)contains:(NSObject *)obj {
+    DualNode *node = self.first;
+    for (int i = 0; i < self.size; i++) {
+        if ([node.data isEqual:obj]) {
+            return YES;
+        }
+        node = node.next;
+    }
+    return NO;
+}
+
+//- (NSUInteger)size {
+//    return _size;
+//}
 
 - (NSString *)description {
     DualNode *node = self.first;
     NSString *desc = [NSString stringWithFormat:@"null_%@_%@",node.data, node.next];
-    for (int i = 0; i < self.size - 2; i++) {
+    for (int i = 0; i < self.size - 1; i++) {
         node = node.next;
         desc = [NSString stringWithFormat:@"%@, %@_%@_%@", desc, node.prev, node.data, node.next];
     }
     
-    [NSString stringWithFormat:@"%@, %@_%@_null",desc, self.last.prev, self.last.data];
+    desc = [NSString stringWithFormat:@"%@, %@_%@_null",desc, self.last.prev, self.last.data];
     return desc;
 }
 
