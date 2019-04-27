@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 // 可以定义Node为LinkList的私有类（Java中叫内部类）
 // 此处为了能够在category中访问，所以未把Node定义为私有类
 @interface Node : NSObject
@@ -18,5 +16,3 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)nodeWithData:(NSObject *)data next:(Node *)next;
 @end
-
-NS_ASSUME_NONNULL_END
