@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic) id data;       // 节点存储的数据
 @property(nonatomic) Node *next;    // 节点指向的后继节点
 
++ (instancetype)nodeWithData:(NSObject *)data next:(Node *)next;
 @end
 
 NS_ASSUME_NONNULL_END

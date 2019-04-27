@@ -138,16 +138,16 @@
     return removedNode.data;
 }
 
-//- (void)clear {
-//    DualNode *node = self.first;
-//    for (int i = 0; i < self.size; i++) {
-//        node.prev = nil;
-//        node = node.next;
-//    }
-//    self.first = nil;
-//    self.last = nil;
-//    self.size = 0;
-//}
+- (void)clear {
+    DualNode *node = self.first;
+    for (int i = 0; i < self.size; i++) {
+        node.prev = nil;
+        node = node.next;
+    }
+    self.first = nil;
+    self.last = nil;
+    self.size = 0;
+}
 
 - (BOOL)isEmpty {
     return self.size == 0;
