@@ -138,6 +138,18 @@
     return removedNode.data;
 }
 
+- (void)pop {
+    self.last = self.last.prev;
+    self.last.next = nil;
+}
+
+- (NSInteger)indexOfObject:(NSObject *)obj {
+    return [self p_indexOfObject:obj];
+}
+
+- (NSObject *)objectAtIndex:(NSInteger)idx {
+    return [[self p_nodeAtIndex:idx] data];
+}
 
 - (void)clear {
     DualNode *node = self.first;
@@ -171,6 +183,7 @@
     }
     DualNode *node = self.first;
     NSString *desc = [NSString stringWithFormat:@"null_%@_%@",node.data, node.next];
+    // 注意size 类型是 NSUInteger i类型是int，如果size - 1 < 0将会进入死循环。所以需要提前判断size == 0的情况
     for (int i = 0; i < self.size - 1; i++) {
         node = node.next;
         desc = [NSString stringWithFormat:@"%@, %@_%@_%@", desc, node.prev, node.data, node.next];
@@ -199,4 +212,57 @@
     }
     return node;
 }
+
+// 首尾两个指针同时查找，最多查找（size/2 + 1）次
+- (NSInteger)p_indexOfObject:(NSObject *)obj {
+    NSUInteger firstIdx = 0;
+    NSUInteger lastIdx = self.size - 1;
+    DualNode *firstNode = self.first;
+    DualNode *lastNode = self.last;
+    // 同样适用于链表长度为0和1的情况
+    for (NSUInteger i = 0 ; i <= self.size >> 1; i++) {
+        if ([firstNode.data isEqual:obj]) {
+            return firstIdx;
+        } else if ([lastNode.data isEqual:obj]) {
+            return lastIdx;
+        }
+        // 到这里发现首尾两个指针相遇，说明待查找的元素不在该链表中
+        if (firstIdx == lastIdx) {
+            return NSNotFound;
+        }
+        firstNode = firstNode.next;
+        lastNode = lastNode.prev;
+        firstIdx += 1;
+        lastIdx -= 1;
+    }
+    // 到这里说明链表是空
+    return NSNotFound;
+}
+
+// 首尾两个指针同时查找，最多查找（size/2 + 1）次
+- (DualNode *)p_nodeOfObject:(NSObject *)obj {
+    NSUInteger firstIdx = 0;
+    NSUInteger lastIdx = self.size - 1;
+    DualNode *firstNode = self.first;
+    DualNode *lastNode = self.last;
+    // 同样适用于链表长度为0和1的情况
+    for (NSUInteger i = 0 ; i <= self.size >> 1; i++) {
+        if ([firstNode.data isEqual:obj]) {
+            return firstNode;
+        } else if ([lastNode.data isEqual:obj]) {
+            return lastNode;
+        }
+        // 到这里发现首尾两个指针相遇，说明待查找的元素不在该链表中
+        if (firstIdx == lastIdx) {
+            return nil;
+        }
+        firstNode = firstNode.next;
+        lastNode = lastNode.prev;
+        firstIdx += 1;
+        lastIdx -= 1;
+    }
+    // 到这里说明链表是空
+    return nil;
+}
+
 @end
