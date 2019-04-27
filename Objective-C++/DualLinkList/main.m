@@ -22,13 +22,13 @@ int main(int argc, const char * argv[]) {
         [list insert:@"0" atIndex:0];
         NSLog(@"%@",list);
         [list insert:@"5" atIndex:5];
-        
-//        [list removeObjectAtIndex:0];
-//        NSLog(@"%@",list);
+        NSLog(@"%@",list);
+        [list removeObjectAtIndex:0];
+        NSLog(@"%@",list);
         [list removeObjectAtIndex:5];
         NSLog(@"%@",list);
 
-//        [list clear];
+        [list clear];
         NSLog(@"%@", list);
 
 

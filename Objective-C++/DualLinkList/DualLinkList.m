@@ -164,10 +164,6 @@
     return NO;
 }
 
-//- (NSUInteger)size {
-//    return _size;
-//}
-
 - (NSString *)description {
     DualNode *node = self.first;
     NSString *desc = [NSString stringWithFormat:@"null_%@_%@",node.data, node.next];
@@ -176,7 +172,6 @@
         desc = [NSString stringWithFormat:@"%@, %@_%@_%@", desc, node.prev, node.data, node.next];
     }
     
-    desc = [NSString stringWithFormat:@"%@, %@_%@_null",desc, self.last.prev, self.last.data];
     return desc;
 }
 
