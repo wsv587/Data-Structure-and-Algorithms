@@ -138,6 +138,7 @@
     return removedNode.data;
 }
 
+
 - (void)clear {
     DualNode *node = self.first;
     for (int i = 0; i < self.size; i++) {
@@ -165,6 +166,9 @@
 }
 
 - (NSString *)description {
+    if (self.size == 0) {
+        return @"null";
+    }
     DualNode *node = self.first;
     NSString *desc = [NSString stringWithFormat:@"null_%@_%@",node.data, node.next];
     for (int i = 0; i < self.size - 1; i++) {

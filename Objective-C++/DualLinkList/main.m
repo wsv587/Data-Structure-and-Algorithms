@@ -16,21 +16,30 @@ int main(int argc, const char * argv[]) {
         [list add:@"1"];
         [list add:@"3"];
         [list add:@"4"];
-        NSLog(@"%@",list);
+//        NSLog(@"%@",list);
         [list insert:@"2" atIndex:1];
-        NSLog(@"%@",list);
+//        NSLog(@"%@",list);
         [list insert:@"0" atIndex:0];
-        NSLog(@"%@",list);
+//        NSLog(@"%@",list);
         [list insert:@"5" atIndex:5];
-        NSLog(@"%@",list);
+//        NSLog(@"%@",list);
         [list removeObjectAtIndex:0];
-        NSLog(@"%@",list);
+//        NSLog(@"%@",list);
         [list removeObjectAtIndex:5];
-        NSLog(@"%@",list);
+//        NSLog(@"%@",list);
 
         [list clear];
         NSLog(@"%@", list);
 
+//        NSUInteger size = 0;
+//        for (int i = 0; i < size-1; i++) {
+//            NSLog(@"print");
+//        }
+        
+        unsigned long size = 0;
+        for (int i = 0; i < size - 1; i++) {
+            NSLog(@"print...");
+        }
 
 //        int i, a[3];
 //        for (i = 0; i <= 3; i++) {
