@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-int operator();
+int operator(void);
+int sameDataType(void);
+int diffDataType(void);
+int hangElse(void);
+
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -15,8 +19,7 @@ int main(int argc, const char * argv[]) {
         int (*operatorPtr)(void) = operator;
         (*operatorPtr)(); // 可简写为 operatorPtr();
         
-        unsigned long num = -1;
-        printf("%d",num);
+        hangElse();
     }
     return 0;
 }
@@ -63,15 +66,29 @@ int diffDataType() {
     return 0;
 }
 
-// 悬挂 else 问题
+// 悬挂 else 问题，以下代码会输出什么，为什么？
 // 了解悬挂else的危害以及了解条件分支语句{}的重要性，避免省略if后面的{}
 int hangElse() {
-    if (true)
-        if (true) {
-            printf("true_true");
+    int a = 10, b = 20;
+    if (a > b)
+        if (a > 0) {
+            printf("more than\n");
         }
     else {
-        printf("second else");
+        printf("less then\n");
     }
     return 0;
 }
+
+//或者
+
+int hangElse1() {
+    int a = 10, b = 20;
+    if (a > b)
+        if (a > 0) printf("a > b && a > 0\n");
+    else {
+        printf("a <= b\n");
+    }
+    return 0;
+}
+
