@@ -7,14 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-// 定义Node私有类（Java中叫内部类）
-// 此处为了能够在category中访问，所以未把Node定义为私有类
-@interface Node : NSObject
-@property(nonatomic) id data;       // 节点存储的数据
-@property(nonatomic) Node *next;    // 节点指向的后继节点
-
-@end
+#import "Node.h"
 
 @interface LinkList : NSObject
 @property(nonatomic) Node *first;                   // 链表的头结点，此处设置为k读写是为了在category中可访问

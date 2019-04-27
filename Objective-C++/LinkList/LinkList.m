@@ -8,16 +8,6 @@
 
 #import "LinkList.h"
 
-@implementation Node
-+ (instancetype)nodeWithData:(NSObject *)data next:(Node *)next {
-    Node *node = [[Node alloc] init];
-    node.data = data;
-    node.next = next;
-    return node;
-}
-
-@end
-
 /**
  * 如果LinkList缓存了尾节点，那么他的添加操作的复杂度将是O(1),删除尾节点的复杂度也是O(1)
  */
