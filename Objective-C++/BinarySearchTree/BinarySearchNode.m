@@ -22,6 +22,6 @@
 }
 
 - (NSComparisonResult)compare:(BinarySearchNode *)node {
-    return self.data > node.data;
+    return [self.data integerValue] > [node.data integerValue];
 }
 @end

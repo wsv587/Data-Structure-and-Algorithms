@@ -20,6 +20,6 @@
 + (instancetype)nodeWithData:(NSObject *)data parent:(BinarySearchNode *)parent;
 
 - (instancetype)initWithData:(NSObject *)data parent:(BinarySearchNode *)praent;
-
+// 节点的数据必须是可以比较大小的，比如NSNumber
 - (NSComparisonResult)compare:(BinarySearchNode *)node;
 @end
