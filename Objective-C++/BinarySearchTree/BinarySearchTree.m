@@ -50,4 +50,8 @@
     }
 }
 
+- (void)remove:(NSObject *)data {
+    
+}
+
 @end

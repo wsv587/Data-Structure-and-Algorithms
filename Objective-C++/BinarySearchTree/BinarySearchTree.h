@@ -16,6 +16,8 @@
 + (instancetype)binarySearchTree;
 - (void)add:(NSObject *)data;
 
+- (void)remove:(NSObject *)data;
+
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
 @end
