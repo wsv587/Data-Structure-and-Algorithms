@@ -100,8 +100,7 @@
             [queue addObject:lastNode.right];
         }
         [queue removeObjectAtIndex:0];
-        size -= 1;
-        if (size == 0) {
+        if ((size -= 1) == 0) {
             size = queue.count;
         }
     }
