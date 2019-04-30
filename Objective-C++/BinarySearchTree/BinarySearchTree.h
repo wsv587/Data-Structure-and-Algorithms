@@ -25,6 +25,10 @@
  * 中序遍历
  */
 - (void)inOrderTraversal:(BinarySearchNode *)root;
+/**
+ * 后序遍历
+ */
+- (void)postOrderTraversal:(BinarySearchNode *)root;
 
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;

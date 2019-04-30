@@ -54,11 +54,13 @@
     
 }
 
-- (void)preOrderTraversal:(BinarySearchNode *)root {
+- (void)preOrderTraversal:(BinarySearchNode *)root callBack:(id)callback {
     if (root == nil) {
         return;
     }
-    NSLog(@"%@",root.data);
+    if (callback) {
+        callback();
+    }
     [self preOrderTraversal:root.left];
     [self preOrderTraversal:root.right];
 }
@@ -70,6 +72,15 @@
     [self inOrderTraversal:root.left];
     NSLog(@"%@",root.data);
     [self inOrderTraversal:root.right];
+}
+
+- (void)postOrderTraversal:(BinarySearchNode *)root {
+    if (root == nil) {
+        return;
+    }
+    [self postOrderTraversal:root];
+    [self postOrderTraversal:root];
+    NSLog(@"%@",root.data);
 }
 
 @end
