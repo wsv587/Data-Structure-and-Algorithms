@@ -107,4 +107,16 @@
     }
 }
 
+- (void)reverse:(BinarySearchNode *)root {
+    if (root == nil) {
+        return;
+    }
+    BinarySearchNode *temp = root.left;
+    root.left = root.right;
+    root.right = temp;
+    
+    [self reverse:root.left];
+    [self reverse:root.right];
+}
+
 @end
