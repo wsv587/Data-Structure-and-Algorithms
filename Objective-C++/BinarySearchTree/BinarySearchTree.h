@@ -29,6 +29,14 @@
  * 后序遍历
  */
 - (void)postOrderTraversal:(BinarySearchNode *)root;
+/**
+ * 层序遍历
+ */
+- (void)levelOrderTraversal:(BinarySearchNode *)root;
+/**
+ * 翻转二叉树 （可采用前序、中序、后序遍历和层序遍历）
+ */
+- (void)reverse:(BinarySearchNode *)root;
 
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;

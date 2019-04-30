@@ -83,4 +83,28 @@
     NSLog(@"%@",root.data);
 }
 
+- (void)levelOrderTraversal:(BinarySearchNode *)root {
+    if (root == nil) {
+        return;
+    }
+    NSUInteger size = 1;
+    // NSMutableArray模拟队列，而实际上Java的队列就是linkedList实现的
+    NSMutableArray<BinarySearchNode *> *queue = [NSMutableArray arrayWithObject:root];
+    while (size != 0) {
+        BinarySearchNode *lastNode = queue.firstObject;
+        NSLog(@"%@",lastNode.data);
+        if (lastNode.left != nil) {
+            [queue addObject:lastNode.left];
+        }
+        if (lastNode.right != nil) {
+            [queue addObject:lastNode.right];
+        }
+        [queue removeObjectAtIndex:0];
+        size -= 1;
+        if (size == 0) {
+            size = queue.count;
+        }
+    }
+}
+
 @end
