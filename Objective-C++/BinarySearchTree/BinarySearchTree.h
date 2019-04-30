@@ -17,6 +17,11 @@
 - (void)add:(NSObject *)data;
 
 - (void)remove:(NSObject *)data;
+/**
+ * 前序遍历
+ */
+- (void)preOrderTraversal:(BinarySearchNode *)root;
+
 
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;

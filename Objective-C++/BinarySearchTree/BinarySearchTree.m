@@ -54,4 +54,13 @@
     
 }
 
+- (void)preOrderTraversal:(BinarySearchNode *)root {
+    if (root == nil) {
+        return;
+    }
+    NSLog(@"%@",root.data);
+    [self preOrderTraversal:root.left];
+    [self preOrderTraversal:root.right];
+}
+
 @end
