@@ -14,6 +14,7 @@
 @property(nonatomic, readonly) BinarySearchNode *root;
 
 + (instancetype)binarySearchTree;
+
 - (void)add:(NSObject *)data;
 
 - (void)remove:(NSObject *)data;
