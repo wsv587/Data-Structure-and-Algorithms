@@ -37,7 +37,10 @@
  * 翻转二叉树 （可采用前序、中序、后序遍历和层序遍历）
  */
 - (void)reverse:(BinarySearchNode *)root;
-
+/**
+ * 求一棵树的高度
+ */
+- (NSUInteger)height:(BinarySearchNode *)root;
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
 @end

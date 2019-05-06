@@ -54,15 +54,28 @@
     
 }
 
-- (void)preOrderTraversal:(BinarySearchNode *)root callBack:(id)callback {
+- (void)preOrderTraversal:(BinarySearchNode *)root {
     if (root == nil) {
         return;
     }
-    if (callback) {
-        callback();
-    }
+    NSLog(@"%@",root.data);
     [self preOrderTraversal:root.left];
     [self preOrderTraversal:root.right];
+}
+
+- (void)preOrderTraversalWithoutRecursion:(BinarySearchNode *)root {
+    if (root == nil) {
+        return;
+    }
+    BinarySearchNode *node = root;
+    while (node != nil) {
+        NSLog(@"%@",node.data);
+        if (node.left != nil) {
+            node = node.left;
+        } else if (node.right != nil) {
+            node = node.right;
+        }
+    }
 }
 
 - (void)inOrderTraversal:(BinarySearchNode *)root {
@@ -118,4 +131,10 @@
     [self reverse:root.right];
 }
 
+- (NSUInteger)height:(BinarySearchNode *)root {
+    if (root == nil) {
+        return 0;
+    }
+    return 1 + MAX([self height:root.left], [self height:root.right]);
+}
 @end
