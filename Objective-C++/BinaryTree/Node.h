@@ -12,18 +12,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Node : NSObject
 @property(nonatomic) NSObject *data;
-@property(nonatomic) BinarySearchNode *parent;
-@property(nonatomic) BinarySearchNode *left;
-@property(nonatomic) BinarySearchNode *right;
+@property(nonatomic) Node *parent;
+@property(nonatomic) Node *left;
+@property(nonatomic) Node *right;
 
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
 
-+ (instancetype)nodeWithData:(NSObject *)data parent:(BinarySearchNode *)parent;
++ (instancetype)nodeWithData:(NSObject *)data parent:(Node *)parent;
 
-- (instancetype)initWithData:(NSObject *)data parent:(BinarySearchNode *)praent;
+- (instancetype)initWithData:(NSObject *)data parent:(Node *)praent;
 // 节点的数据必须是可以比较大小的，比如NSNumber
-- (NSComparisonResult)compare:(BinarySearchNode *)node;
+- (NSComparisonResult)compare:(Node *)node;
 @end
 
 NS_ASSUME_NONNULL_END

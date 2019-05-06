@@ -9,11 +9,11 @@
 #import "Node.h"
 
 @implementation Node
-+ (instancetype)nodeWithData:(NSObject *)data parent:(BinarySearchNode *)parent {
-    return [[BinarySearchNode alloc] initWithData:data parent:parent];
++ (instancetype)nodeWithData:(NSObject *)data parent:(Node *)parent {
+    return [[self alloc] initWithData:data parent:parent];
 }
 
-- (instancetype)initWithData:(NSObject *)data parent:(BinarySearchNode *)praent {
+- (instancetype)initWithData:(NSObject *)data parent:(Node *)praent {
     if (self = [super init]) {
         _data = data;
         _parent = _parent;
@@ -21,7 +21,7 @@
     return self;
 }
 
-- (NSComparisonResult)compare:(BinarySearchNode *)node {
+- (NSComparisonResult)compare:(Node *)node {
     return [self.data integerValue] > [node.data integerValue];
 }
 @end
