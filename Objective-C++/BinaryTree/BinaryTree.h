@@ -13,11 +13,17 @@ NS_ASSUME_NONNULL_BEGIN
 @interface BinaryTree : NSObject
 @property(nonatomic, readonly) NSUInteger size;
 @property(nonatomic, readonly) BinaryTree *root;
-
+/**
+ * 创建一棵空数
+ */
 + (instancetype)tree;
-
+/**
+ * 添加元素
+ */
 - (void)add:(NSObject *)data;
-
+/**
+ * 删除元素
+ */
 - (void)remove:(NSObject *)data;
 /**
  * 前序遍历
