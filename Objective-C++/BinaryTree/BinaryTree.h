@@ -11,7 +11,47 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BinaryTree : NSObject
+@property(nonatomic, readonly) NSUInteger size;
+@property(nonatomic, readonly) BinaryTree *root;
 
++ (instancetype)tree;
+
+- (void)add:(NSObject *)data;
+
+- (void)remove:(NSObject *)data;
+/**
+ * 前序遍历
+ */
+- (void)preOrderTraversal:(BinaryTree *)root;
+/**
+ * 中序遍历
+ */
+- (void)inOrderTraversal:(BinaryTree *)root;
+/**
+ * 后序遍历
+ */
+- (void)postOrderTraversal:(BinaryTree *)root;
+/**
+ * 层序遍历
+ */
+- (void)levelOrderTraversal:(BinaryTree *)root;
+/**
+ * 翻转二叉树 （可采用前序、中序、后序遍历和层序遍历）
+ */
+- (void)reverse:(BinaryTree *)root;
+/**
+ * 求一棵树的高度
+ */
+- (NSUInteger)height:(BinaryTree *)root;
+
+- (BOOL)isEmpty;
+
+- (void)clear;
+
+- (BOOL)contains:(NSObject *)data;
+
++ (instancetype)new NS_UNAVAILABLE;
+- (instancetype)init NS_UNAVAILABLE;
 @end
 
 NS_ASSUME_NONNULL_END
