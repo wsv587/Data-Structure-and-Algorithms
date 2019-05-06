@@ -131,4 +131,12 @@
     }
     return 1 + MAX([self height:root.left], [self height:root.right]);
 }
+
+-(BOOL)isEmpty {
+    return self.size == 0;
+}
+
+- (void)clear {
+    self.root == nil;
+}
 @end
