@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-@class BinaryNode;
+@class BinaryNode, Comparer;
 
 @interface BinaryTree : NSObject
 @property(nonatomic) NSUInteger size;
@@ -15,7 +15,7 @@
 /**
  * 创建一棵空数
  */
-+ (instancetype)tree;
++ (instancetype)treeWithComparer:(Comparer *)comparer;
 /**
  * 添加元素
  */
@@ -56,11 +56,7 @@
  * 清空树
  */
 - (void)clear;
-/**
- * 是否包含某个元素
- */
-- (BOOL)contains:(NSObject *)data;
 
-//+ (instancetype)new NS_UNAVAILABLE;
-//- (instancetype)init NS_UNAVAILABLE;
++ (instancetype)new NS_UNAVAILABLE;
+- (instancetype)init NS_UNAVAILABLE;
 @end

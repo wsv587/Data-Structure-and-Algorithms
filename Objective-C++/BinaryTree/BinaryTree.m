@@ -8,11 +8,24 @@
 
 #import "BinaryTree.h"
 #import "BinaryNode.h"
+#import "Comparer.h"
+
+@interface BinaryTree ()
+@property(nonatomic) Comparer *comparer;
+@end
 
 @implementation BinaryTree
-+ (instancetype)binarySearchTree {
-    return [[BinaryTree alloc] init];
++ (instancetype)treeWithComparer:(Comparer *)comparer {
+    return [[BinaryTree alloc] initWithComparer:comparer];
 }
+
+- (instancetype)initWithComparer:(Comparer *)comparer {
+    if (self = [super init]) {
+        self.comparer = comparer;
+    }
+    return self;
+}
+
 
 - (void)add:(NSObject *)data {
     BinaryNode *newBinaryNode = [BinaryNode nodeWithData:data parent:nil];
@@ -140,4 +153,5 @@
 - (void)clear {
     self.root = nil;
 }
+
 @end

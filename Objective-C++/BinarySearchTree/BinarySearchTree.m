@@ -10,9 +10,6 @@
 #import "BinaryNode.h"
 
 @implementation BinarySearchTree
-+ (instancetype)binarySearchTree {
-    return [[BinarySearchTree alloc] init];
-}
 
 - (void)add:(NSObject *)data {
     BinaryNode *newNode = [BinaryNode nodeWithData:data parent:nil];
@@ -49,4 +46,20 @@
     
 }
 
+- (BOOL)contains:(NSObject *)data {
+    return [self node:data] != nil;
+}
+
+- (BinaryNode *)node:(NSObject *)data {
+    BinaryNode *node = self.root;
+    while (node != nil) {
+        if ([node.data isEqual:data]) {
+            return node;
+        }
+//        if (node.data == compar) {
+//            <#statements#>
+//        }
+    }
+    return nil;
+}
 @end

@@ -14,6 +14,7 @@
 		D006538D22807CC600266EA8 /* BinaryTree.m in Sources */ = {isa = PBXBuildFile; fileRef = D006538822806A5100266EA8 /* BinaryTree.m */; };
 		D006538E22807CC600266EA8 /* BinaryNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D006538B22806A7F00266EA8 /* BinaryNode.m */; };
 		D00653942280832400266EA8 /* BinarySearchTree.m in Sources */ = {isa = PBXBuildFile; fileRef = D00653932280832400266EA8 /* BinarySearchTree.m */; };
+		D006539A2280919900266EA8 /* Comparer.m in Sources */ = {isa = PBXBuildFile; fileRef = D00653992280919900266EA8 /* Comparer.m */; };
 		D02C4140226A0A8000AEE587 /* Assert.m in Sources */ = {isa = PBXBuildFile; fileRef = D02C413F226A0A8000AEE587 /* Assert.m */; };
 		D02C4143226A0C0A00AEE587 /* Assert.m in Sources */ = {isa = PBXBuildFile; fileRef = D02C413F226A0A8000AEE587 /* Assert.m */; };
 		D02C414C226E0EE800AEE587 /* LinkList+leetcode.m in Sources */ = {isa = PBXBuildFile; fileRef = D02C414B226E0EE800AEE587 /* LinkList+leetcode.m */; };
@@ -130,6 +131,8 @@
 		D006538B22806A7F00266EA8 /* BinaryNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BinaryNode.m; sourceTree = "<group>"; };
 		D00653922280832400266EA8 /* BinarySearchTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BinarySearchTree.h; sourceTree = "<group>"; };
 		D00653932280832400266EA8 /* BinarySearchTree.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BinarySearchTree.m; sourceTree = "<group>"; };
+		D00653982280919800266EA8 /* Comparer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Comparer.h; sourceTree = "<group>"; };
+		D00653992280919900266EA8 /* Comparer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Comparer.m; sourceTree = "<group>"; };
 		D02C413E226A0A8000AEE587 /* Assert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Assert.h; sourceTree = "<group>"; };
 		D02C413F226A0A8000AEE587 /* Assert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Assert.m; sourceTree = "<group>"; };
 		D02C414A226E0EE800AEE587 /* LinkList+leetcode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LinkList+leetcode.h"; sourceTree = "<group>"; };
@@ -255,6 +258,8 @@
 			isa = PBXGroup;
 			children = (
 				D006538222806A3C00266EA8 /* main.m */,
+				D00653982280919800266EA8 /* Comparer.h */,
+				D00653992280919900266EA8 /* Comparer.m */,
 				D006538722806A5100266EA8 /* BinaryTree.h */,
 				D006538822806A5100266EA8 /* BinaryTree.m */,
 				D006538A22806A7F00266EA8 /* BinaryNode.h */,
@@ -657,6 +662,7 @@
 			files = (
 				D006538922806A5100266EA8 /* BinaryTree.m in Sources */,
 				D006538322806A3C00266EA8 /* main.m in Sources */,
+				D006539A2280919900266EA8 /* Comparer.m in Sources */,
 				D006538C22806A7F00266EA8 /* BinaryNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

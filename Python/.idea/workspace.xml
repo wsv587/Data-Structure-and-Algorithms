@@ -2,6 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2317bc6b-510d-4700-b567-e0a0b4fd153f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Objective-C++/BinaryTree/Comparer.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Objective-C++/BinaryTree/Comparer.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Objective-C++/BinarySearchTree/BinarySearchTree.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Objective-C++/BinarySearchTree/BinarySearchTree.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Objective-C++/BinarySearchTree/BinarySearchTree.m" beforeDir="false" afterPath="$PROJECT_DIR$/../Objective-C++/BinarySearchTree/BinarySearchTree.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Objective-C++/BinaryTree/BinaryTree.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Objective-C++/BinaryTree/BinaryTree.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Objective-C++/BinaryTree/BinaryTree.m" beforeDir="false" afterPath="$PROJECT_DIR$/../Objective-C++/BinaryTree/BinaryTree.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Objective-C++/Objective-C++.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../Objective-C++/Objective-C++.xcodeproj/project.pbxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Objective-C++/Objective-C++.xcodeproj/project.xcworkspace/xcuserdata/sw.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/../Objective-C++/Objective-C++.xcodeproj/project.xcworkspace/xcuserdata/sw.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -191,7 +198,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="26" y="28" width="1224" height="737" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24937657" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
