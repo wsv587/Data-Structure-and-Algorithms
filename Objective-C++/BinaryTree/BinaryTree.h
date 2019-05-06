@@ -43,11 +43,17 @@ NS_ASSUME_NONNULL_BEGIN
  * 求一棵树的高度
  */
 - (NSUInteger)height:(BinaryTree *)root;
-
+/**
+ * 是否为空树
+ */
 - (BOOL)isEmpty;
-
+/**
+ * 清空树
+ */
 - (void)clear;
-
+/**
+ * 是否包含某个元素
+ */
 - (BOOL)contains:(NSObject *)data;
 
 + (instancetype)new NS_UNAVAILABLE;
