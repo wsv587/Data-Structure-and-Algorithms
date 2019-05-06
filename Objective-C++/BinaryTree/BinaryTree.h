@@ -7,12 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-
-NS_ASSUME_NONNULL_BEGIN
+@class BinaryNode;
 
 @interface BinaryTree : NSObject
-@property(nonatomic, readonly) NSUInteger size;
-@property(nonatomic, readonly) BinaryTree *root;
+@property(nonatomic) NSUInteger size;
+@property(nonatomic) BinaryNode *root;
 /**
  * 创建一棵空数
  */
@@ -28,27 +27,27 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * 前序遍历
  */
-- (void)preOrderTraversal:(BinaryTree *)root;
+- (void)preOrderTraversal:(BinaryNode *)root;
 /**
  * 中序遍历
  */
-- (void)inOrderTraversal:(BinaryTree *)root;
+- (void)inOrderTraversal:(BinaryNode *)root;
 /**
  * 后序遍历
  */
-- (void)postOrderTraversal:(BinaryTree *)root;
+- (void)postOrderTraversal:(BinaryNode *)root;
 /**
  * 层序遍历
  */
-- (void)levelOrderTraversal:(BinaryTree *)root;
+- (void)levelOrderTraversal:(BinaryNode *)root;
 /**
  * 翻转二叉树 （可采用前序、中序、后序遍历和层序遍历）
  */
-- (void)reverse:(BinaryTree *)root;
+- (void)reverse:(BinaryNode *)root;
 /**
  * 求一棵树的高度
  */
-- (NSUInteger)height:(BinaryTree *)root;
+- (NSUInteger)height:(BinaryNode *)root;
 /**
  * 是否为空树
  */
@@ -62,8 +61,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (BOOL)contains:(NSObject *)data;
 
-+ (instancetype)new NS_UNAVAILABLE;
-- (instancetype)init NS_UNAVAILABLE;
+//+ (instancetype)new NS_UNAVAILABLE;
+//- (instancetype)init NS_UNAVAILABLE;
 @end
-
-NS_ASSUME_NONNULL_END

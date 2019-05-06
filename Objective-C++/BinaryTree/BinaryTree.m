@@ -7,27 +7,28 @@
 //
 
 #import "BinaryTree.h"
+#import "BinaryNode.h"
 
 @implementation BinaryTree
-+ (instancetype)tree {
++ (instancetype)binarySearchTree {
     return [[BinaryTree alloc] init];
 }
 
 - (void)add:(NSObject *)data {
-    BinaryTree *newNode = [BinaryTree nodeWithData:data parent:nil];
+    BinaryNode *newBinaryNode = [BinaryNode nodeWithData:data parent:nil];
     if (self.size == 0) {
-        self.root = newNode;
+        self.root = newBinaryNode;
     } else {
-        BinaryTree *node = self.root;
-        BinaryTree *parent = self.root;
+        BinaryNode *node = self.root;
+        BinaryNode *parent = self.root;
         NSComparisonResult result = NSOrderedSame;
         while (node != nil) {
-            if ([node compare:newNode] == NSOrderedDescending) { // node > newNode 查找左子树
+            if ([node compare:newBinaryNode] == NSOrderedDescending) { // node > newBinaryNode 查找左子树
                 parent = node;
                 node = node.left;
                 result = NSOrderedDescending;
                 
-            } else if ([node compare:newNode] == NSOrderedAscending) { // node < newNode 查找右子树
+            } else if ([node compare:newBinaryNode] == NSOrderedAscending) { // node < newBinaryNode 查找右子树
                 parent = node;
                 node = node.right;
                 result = NSOrderedAscending;
@@ -37,9 +38,9 @@
         }
         
         if (result == NSOrderedDescending) {
-            parent.left = newNode;
+            parent.left = newBinaryNode;
         } else {
-            parent.right = newNode;
+            parent.right = newBinaryNode;
         }
     }
 }
@@ -48,7 +49,7 @@
     
 }
 
-- (void)preOrderTraversal:(BinaryTree *)root {
+- (void)preOrderTraversal:(BinaryNode *)root {
     if (root == nil) {
         return;
     }
@@ -57,11 +58,11 @@
     [self preOrderTraversal:root.right];
 }
 
-- (void)preOrderTraversalWithoutRecursion:(BinaryTree *)root {
+- (void)preOrderTraversalWithoutRecursion:(BinaryNode *)root {
     if (root == nil) {
         return;
     }
-    BinaryTree *node = root;
+    BinaryNode *node = root;
     while (node != nil) {
         NSLog(@"%@",node.data);
         if (node.left != nil) {
@@ -72,7 +73,7 @@
     }
 }
 
-- (void)inOrderTraversal:(BinaryTree *)root {
+- (void)inOrderTraversal:(BinaryNode *)root {
     if (root == nil) {
         return;
     }
@@ -81,7 +82,7 @@
     [self inOrderTraversal:root.right];
 }
 
-- (void)postOrderTraversal:(BinaryTree *)root {
+- (void)postOrderTraversal:(BinaryNode *)root {
     if (root == nil) {
         return;
     }
@@ -90,21 +91,21 @@
     NSLog(@"%@",root.data);
 }
 
-- (void)levelOrderTraversal:(BinaryTree *)root {
+- (void)levelOrderTraversal:(BinaryNode *)root {
     if (root == nil) {
         return;
     }
     NSUInteger size = 1;
     // NSMutableArray模拟队列，而实际上Java的队列就是linkedList实现的
-    NSMutableArray<BinaryTree *> *queue = [NSMutableArray arrayWithObject:root];
+    NSMutableArray<BinaryNode *> *queue = [NSMutableArray arrayWithObject:root];
     while (size != 0) {
-        BinaryTree *lastNode = queue.firstObject;
-        NSLog(@"%@",lastNode.data);
-        if (lastNode.left != nil) {
-            [queue addObject:lastNode.left];
+        BinaryNode *lastBinaryNode = queue.firstObject;
+        NSLog(@"%@",lastBinaryNode.data);
+        if (lastBinaryNode.left != nil) {
+            [queue addObject:lastBinaryNode.left];
         }
-        if (lastNode.right != nil) {
-            [queue addObject:lastNode.right];
+        if (lastBinaryNode.right != nil) {
+            [queue addObject:lastBinaryNode.right];
         }
         [queue removeObjectAtIndex:0];
         if ((size -= 1) == 0) {
@@ -113,11 +114,11 @@
     }
 }
 
-- (void)reverse:(BinaryTree *)root {
+- (void)reverse:(BinaryNode *)root {
     if (root == nil) {
         return;
     }
-    BinaryTree *temp = root.left;
+    BinaryNode *temp = root.left;
     root.left = root.right;
     root.right = temp;
     
@@ -125,7 +126,7 @@
     [self reverse:root.right];
 }
 
-- (NSUInteger)height:(BinaryTree *)root {
+- (NSUInteger)height:(BinaryNode *)root {
     if (root == nil) {
         return 0;
     }
@@ -137,6 +138,6 @@
 }
 
 - (void)clear {
-    self.root == nil;
+    self.root = nil;
 }
 @end
