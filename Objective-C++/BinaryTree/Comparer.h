@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface Comparer : NSObject
-- (NSComparisonResult)compare:(id<NSObject> *)obj1 obj:(id<NSObject> *)obj2;
++ (instancetype)comparer;
+- (NSComparisonResult)compare:(id<NSObject> *)obj1 with:(id<NSObject> *)obj2;
 @end
