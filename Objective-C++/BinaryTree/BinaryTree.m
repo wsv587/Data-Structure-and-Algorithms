@@ -7,8 +7,6 @@
 //
 
 #import "BinaryTree.h"
-#import "BinaryNode.h"
-#import "Comparer.h"
 
 @interface BinaryTree ()
 @property(nonatomic) Comparer *comparer;

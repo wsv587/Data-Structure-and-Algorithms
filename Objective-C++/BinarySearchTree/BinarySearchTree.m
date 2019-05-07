@@ -53,12 +53,14 @@
 - (BinaryNode *)node:(NSObject *)data {
     BinaryNode *node = self.root;
     while (node != nil) {
-        if ([node.data isEqual:data]) {
+        NSComparisonResult res = [self.comparer compare:node.data with:data];
+        if (res == NSOrderedAscending) { // 升序
+            node = node.right;
+        } else if (res == NSOrderedDescending) {
+            node = node.left;
+        } else {
             return node;
         }
-//        if (node.data == compar) {
-//            <#statements#>
-//        }
     }
     return nil;
 }

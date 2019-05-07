@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-@class BinaryNode, Comparer;
+#import "BinaryNode.h"
+#import "Comparer.h"
 
 @interface BinaryTree : NSObject
 @property(nonatomic) NSUInteger size;
 @property(nonatomic) BinaryNode *root;
+@property(nonatomic, readonly) Comparer *comparer;
 /**
  * 创建一棵空数
  */
