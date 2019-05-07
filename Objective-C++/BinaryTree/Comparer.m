@@ -7,6 +7,7 @@
 //
 
 #import "Comparer.h"
+#import "BinaryNode.h"
 
 @implementation Comparer
 
@@ -15,6 +16,11 @@
 }
 
 - (NSComparisonResult)compare:(__autoreleasing id<NSObject> *)obj1 with:(__autoreleasing id<NSObject> *)obj2 {
+    if ([obj1 isKindOfClass:[BinaryNode class]]) {
+        obj1 = (BinaryNode *)obj1.data;
+    } else if ([obj2 isKindOfClass:[BinaryNode class]]) {
+        obj2 = (BinaryNode *)obj2.data;
+    }
     if ([obj1 isKindOfClass:[NSNumber class]]) {
         NSInteger val1 = [(NSNumber *)obj1 integerValue];
         NSInteger val2 = [(NSNumber *)obj1 integerValue];
