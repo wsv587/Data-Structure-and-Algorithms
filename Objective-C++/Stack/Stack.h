@@ -12,4 +12,6 @@
 @interface Stack : NSObject<List>
 @property(nonatomic) NSUInteger size;
 @property(nonatomic) NSMutableArray *elements;
+
++ (instancetype)stack;
 @end

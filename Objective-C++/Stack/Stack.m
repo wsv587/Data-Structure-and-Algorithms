@@ -14,9 +14,22 @@
 @end
 
 @implementation Stack
++ (instancetype)stack {
+    return [[self alloc] init];
+}
+
+- (instancetype)init {
+    if (self = [super init]) {
+        _elements = [NSMutableArray array];
+        _size = 0;
+    }
+    return self;
+}
+
 // 添加元素
 - (void)add:(NSObject *)obj {
     self.elements[_size] = obj;
+    self.size += 1;
 }
 // 移除末尾元素
 - (void)pop {
@@ -65,5 +78,15 @@
     return _size;
 }
 
+- (NSString *)description {
+    if (self.size <= 0) {
+        return nil;
+    }
+    NSString *desc = [NSString stringWithFormat:@"%@",[self top]];
+    for (NSInteger i = self.size - 2; i >= 0; i--) {
+        desc = [NSString stringWithFormat:@"%@,%@",desc, self.elements[i]];
+    }
+    return desc;
+}
 
 @end

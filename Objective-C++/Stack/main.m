@@ -7,11 +7,25 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Stack.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // insert code here...
-        NSLog(@"Hello, World!");
+        Stack *stack = [Stack stack];
+        [stack add:@"1"];
+        [stack add:@"2"];
+        [stack add:@"3"];
+        [stack add:@"4"];
+        [stack add:@"5"];
+        NSLog(@"%@",stack);
+        [stack pop];
+        NSLog(@"%@",stack);
+        NSLog(@"%@",[stack top]);
+
+    
+
+
     }
     return 0;
 }
