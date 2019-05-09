@@ -24,4 +24,5 @@
 - (NSComparisonResult)compare:(BinaryNode *)node {
     return [(id)self.data integerValue] > [(id)node.data integerValue];
 }
+
 @end

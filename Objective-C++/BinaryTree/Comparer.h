@@ -10,5 +10,5 @@
 
 @interface Comparer : NSObject
 + (instancetype)comparer;
-- (NSComparisonResult)compare:(id<NSObject> *)obj1 with:(id<NSObject> *)obj2;
+- (NSComparisonResult)compare:(id)obj1 with:(id)obj2;
 @end

@@ -19,25 +19,22 @@
  */
 + (instancetype)treeWithComparer:(Comparer *)comparer;
 /**
- * 添加元素
- */
-- (void)add:(NSObject *)data;
-/**
- * 删除元素
- */
-- (void)remove:(NSObject *)data;
-/**
  * 前序遍历
  */
 - (void)preOrderTraversal:(BinaryNode *)root;
+- (void)preOrderTraversalWithoutRecursion:(BinaryNode *)root;
 /**
  * 中序遍历
  */
 - (void)inOrderTraversal:(BinaryNode *)root;
+- (void)inOrderTraversalWithoutRecursion:(BinaryNode *)root;
+
 /**
  * 后序遍历
  */
 - (void)postOrderTraversal:(BinaryNode *)root;
+- (void)postOrderTraversalWithoutRecursion:(BinaryNode *)root;
+
 /**
  * 层序遍历
  */

@@ -7,6 +7,7 @@
 //
 
 #import "BinaryTree.h"
+#import "Stack.h"
 
 @interface BinaryTree ()
 @property(nonatomic) Comparer *comparer;
@@ -24,42 +25,6 @@
     return self;
 }
 
-
-- (void)add:(NSObject *)data {
-    BinaryNode *newBinaryNode = [BinaryNode nodeWithData:data parent:nil];
-    if (self.size == 0) {
-        self.root = newBinaryNode;
-    } else {
-        BinaryNode *node = self.root;
-        BinaryNode *parent = self.root;
-        NSComparisonResult result = NSOrderedSame;
-        while (node != nil) {
-            if ([node compare:newBinaryNode] == NSOrderedDescending) { // node > newBinaryNode 查找左子树
-                parent = node;
-                node = node.left;
-                result = NSOrderedDescending;
-                
-            } else if ([node compare:newBinaryNode] == NSOrderedAscending) { // node < newBinaryNode 查找右子树
-                parent = node;
-                node = node.right;
-                result = NSOrderedAscending;
-            } else { //相等
-                return;
-            }
-        }
-        
-        if (result == NSOrderedDescending) {
-            parent.left = newBinaryNode;
-        } else {
-            parent.right = newBinaryNode;
-        }
-    }
-}
-
-- (void)remove:(NSObject *)data {
-    
-}
-
 - (void)preOrderTraversal:(BinaryNode *)root {
     if (root == nil) {
         return;
@@ -73,6 +38,7 @@
     if (root == nil) {
         return;
     }
+    Stack *S = [Stack stack];
     BinaryNode *node = root;
     while (node != nil) {
         NSLog(@"%@",node.data);

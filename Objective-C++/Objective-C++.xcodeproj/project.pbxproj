@@ -17,6 +17,7 @@
 		D006539A2280919900266EA8 /* Comparer.m in Sources */ = {isa = PBXBuildFile; fileRef = D00653992280919900266EA8 /* Comparer.m */; };
 		D00653A22281D8D600266EA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D00653A12281D8D600266EA8 /* main.m */; };
 		D00653A82281D91600266EA8 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = D00653A72281D91600266EA8 /* Stack.m */; };
+		D00653AB2283246400266EA8 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = D00653A72281D91600266EA8 /* Stack.m */; };
 		D02C4140226A0A8000AEE587 /* Assert.m in Sources */ = {isa = PBXBuildFile; fileRef = D02C413F226A0A8000AEE587 /* Assert.m */; };
 		D02C4143226A0C0A00AEE587 /* Assert.m in Sources */ = {isa = PBXBuildFile; fileRef = D02C413F226A0A8000AEE587 /* Assert.m */; };
 		D02C414C226E0EE800AEE587 /* LinkList+leetcode.m in Sources */ = {isa = PBXBuildFile; fileRef = D02C414B226E0EE800AEE587 /* LinkList+leetcode.m */; };
@@ -149,6 +150,7 @@
 		D00653A62281D91600266EA8 /* Stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
 		D00653A72281D91600266EA8 /* Stack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
 		D00653AA2281D95B00266EA8 /* List.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
+		D00653AC22845FB100266EA8 /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = List.h; path = "Objective-C++/Interface/List.h"; sourceTree = SOURCE_ROOT; };
 		D02C413E226A0A8000AEE587 /* Assert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Assert.h; sourceTree = "<group>"; };
 		D02C413F226A0A8000AEE587 /* Assert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Assert.m; sourceTree = "<group>"; };
 		D02C414A226E0EE800AEE587 /* LinkList+leetcode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LinkList+leetcode.h"; sourceTree = "<group>"; };
@@ -416,6 +418,7 @@
 		D0AF496A2267743F008CFBC4 /* ArrayList */ = {
 			isa = PBXGroup;
 			children = (
+				D00653AC22845FB100266EA8 /* List.h */,
 				D0AF496B2267743F008CFBC4 /* main.m */,
 				D0AF49702267746D008CFBC4 /* ArrayList.h */,
 				D0AF49712267746D008CFBC4 /* ArrayList.m */,
@@ -728,6 +731,7 @@
 				D006538922806A5100266EA8 /* BinaryTree.m in Sources */,
 				D006538322806A3C00266EA8 /* main.m in Sources */,
 				D006539A2280919900266EA8 /* Comparer.m in Sources */,
+				D00653AB2283246400266EA8 /* Stack.m in Sources */,
 				D006538C22806A7F00266EA8 /* BinaryNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

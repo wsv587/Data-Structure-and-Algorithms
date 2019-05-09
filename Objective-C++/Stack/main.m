@@ -22,10 +22,6 @@ int main(int argc, const char * argv[]) {
         [stack pop];
         NSLog(@"%@",stack);
         NSLog(@"%@",[stack top]);
-
-    
-
-
     }
     return 0;
 }
