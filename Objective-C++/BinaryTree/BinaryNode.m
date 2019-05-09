@@ -25,4 +25,7 @@
     return [(id)self.data integerValue] > [(id)node.data integerValue];
 }
 
+- (NSString *)description {
+    return [NSString stringWithFormat:@"%@",self.data];
+}
 @end
