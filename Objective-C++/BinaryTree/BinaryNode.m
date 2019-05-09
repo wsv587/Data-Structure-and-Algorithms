@@ -13,10 +13,10 @@
     return [[self alloc] initWithData:data parent:parent];
 }
 
-- (instancetype)initWithData:(NSObject *)data parent:(BinaryNode *)praent {
+- (instancetype)initWithData:(NSObject *)data parent:(BinaryNode *)parent {
     if (self = [super init]) {
         _data = data;
-        _parent = _parent;
+        _parent = parent;
     }
     return self;
 }

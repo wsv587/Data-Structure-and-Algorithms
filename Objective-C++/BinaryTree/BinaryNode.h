@@ -19,7 +19,7 @@
 
 + (instancetype)nodeWithData:(NSObject *)data parent:(BinaryNode *)parent;
 
-- (instancetype)initWithData:(NSObject *)data parent:(BinaryNode *)praent;
+- (instancetype)initWithData:(NSObject *)data parent:(BinaryNode *)parent;
 // 节点的数据必须是可以比较大小的，比如NSNumber
 - (NSComparisonResult)compare:(BinaryNode *)node;
 @end
