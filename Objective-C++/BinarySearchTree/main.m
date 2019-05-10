@@ -9,14 +9,18 @@
 #import <Foundation/Foundation.h>
 #import "BinarySearchTree.h"
 #import "Comparer.h"
-BinarySearchTree * BST();
+BinarySearchTree * BST(void);
+
 void preOrderBST(BinarySearchTree *bst);
+void inOrderBST(BinarySearchTree *bst);
 
 // 二叉搜索树能把查找、插入、删除操作的时间复杂度降低到Olog(n)
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // insert code here...
         preOrderBST(BST());
+        inOrderBST(BST());
+        
     }
     return 0;
 }
@@ -36,4 +40,8 @@ BinarySearchTree * BST(){
 
 void preOrderBST(BinarySearchTree *bst) {
     [bst preOrderTraversal:bst.root];
+}
+
+void inOrderBST(BinarySearchTree *bst) {
+    [bst inOrderTraversal:bst.root];
 }
