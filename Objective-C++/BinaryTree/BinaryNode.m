@@ -22,7 +22,11 @@
 }
 
 - (NSComparisonResult)compare:(BinaryNode *)node {
-    return [(id)self.data integerValue] > [(id)node.data integerValue];
+    if ([(id)self.data integerValue] > [(id)node.data integerValue]) {
+        return NSOrderedDescending;
+    } else if ([(id)self.data integerValue] < [(id)node.data integerValue]) {
+        return NSOrderedAscending;
+    } else {return NSOrderedSame;}
 }
 
 - (NSString *)description {

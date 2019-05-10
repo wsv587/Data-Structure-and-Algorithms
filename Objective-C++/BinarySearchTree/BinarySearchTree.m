@@ -40,6 +40,7 @@
             parent.right = newNode;
         }
     }
+    self.size += 1;
 }
 
 - (void)remove:(NSObject *)data {

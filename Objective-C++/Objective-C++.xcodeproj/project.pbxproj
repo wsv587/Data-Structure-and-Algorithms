@@ -18,6 +18,8 @@
 		D00653A22281D8D600266EA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D00653A12281D8D600266EA8 /* main.m */; };
 		D00653A82281D91600266EA8 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = D00653A72281D91600266EA8 /* Stack.m */; };
 		D00653AB2283246400266EA8 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = D00653A72281D91600266EA8 /* Stack.m */; };
+		D00653AD2285D4D800266EA8 /* Comparer.m in Sources */ = {isa = PBXBuildFile; fileRef = D00653992280919900266EA8 /* Comparer.m */; };
+		D00653AE2285D4EF00266EA8 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = D00653A72281D91600266EA8 /* Stack.m */; };
 		D02C4140226A0A8000AEE587 /* Assert.m in Sources */ = {isa = PBXBuildFile; fileRef = D02C413F226A0A8000AEE587 /* Assert.m */; };
 		D02C4143226A0C0A00AEE587 /* Assert.m in Sources */ = {isa = PBXBuildFile; fileRef = D02C413F226A0A8000AEE587 /* Assert.m */; };
 		D02C414C226E0EE800AEE587 /* LinkList+leetcode.m in Sources */ = {isa = PBXBuildFile; fileRef = D02C414B226E0EE800AEE587 /* LinkList+leetcode.m */; };
@@ -717,9 +719,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D00653AE2285D4EF00266EA8 /* Stack.m in Sources */,
 				D006538E22807CC600266EA8 /* BinaryNode.m in Sources */,
 				D006538D22807CC600266EA8 /* BinaryTree.m in Sources */,
 				D00653722275E34D00266EA8 /* main.m in Sources */,
+				D00653AD2285D4D800266EA8 /* Comparer.m in Sources */,
 				D00653942280832400266EA8 /* BinarySearchTree.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

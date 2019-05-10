@@ -15,7 +15,7 @@
 
 @implementation BinaryTree
 + (instancetype)treeWithComparer:(Comparer *)comparer {
-    return [[BinaryTree alloc] initWithComparer:comparer];
+    return [[self alloc] initWithComparer:comparer];
 }
 
 - (instancetype)initWithComparer:(Comparer *)comparer {
