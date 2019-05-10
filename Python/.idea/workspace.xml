@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2317bc6b-510d-4700-b567-e0a0b4fd153f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Objective-C++/BinaryTree/BinaryTree.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Objective-C++/BinaryTree/BinaryTree.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Objective-C++/BinaryTree/BinaryTree.m" beforeDir="false" afterPath="$PROJECT_DIR$/../Objective-C++/BinaryTree/BinaryTree.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Objective-C++/BinaryTree/Comparer.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Objective-C++/BinaryTree/Comparer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Objective-C++/BinaryTree/Comparer.m" beforeDir="false" afterPath="$PROJECT_DIR$/../Objective-C++/BinaryTree/Comparer.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Objective-C++/Objective-C++.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../Objective-C++/Objective-C++.xcodeproj/project.pbxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Objective-C++/Objective-C++.xcodeproj/project.xcworkspace/xcuserdata/sw.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/../Objective-C++/Objective-C++.xcodeproj/project.xcworkspace/xcuserdata/sw.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Objective-C++/Objective-C++.xcodeproj/xcuserdata/sw.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" beforeDir="false" afterPath="$PROJECT_DIR$/../Objective-C++/Objective-C++.xcodeproj/xcuserdata/sw.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Objective-C++/Stack/main.m" beforeDir="false" afterPath="$PROJECT_DIR$/../Objective-C++/Stack/main.m" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +71,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="26" />
     <option name="y" value="28" />
     <option name="width" value="1224" />
