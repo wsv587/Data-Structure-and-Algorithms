@@ -13,6 +13,7 @@ BinarySearchTree * BST(void);
 
 void preOrderBST(BinarySearchTree *bst);
 void inOrderBST(BinarySearchTree *bst);
+void postOrderBST(BinarySearchTree *bst);
 
 // 二叉搜索树能把查找、插入、删除操作的时间复杂度降低到Olog(n)
 int main(int argc, const char * argv[]) {
@@ -20,7 +21,7 @@ int main(int argc, const char * argv[]) {
         // insert code here...
         preOrderBST(BST());
         inOrderBST(BST());
-        
+        postOrderBST(BST());
     }
     return 0;
 }
@@ -44,4 +45,8 @@ void preOrderBST(BinarySearchTree *bst) {
 
 void inOrderBST(BinarySearchTree *bst) {
     [bst inOrderTraversal:bst.root];
+}
+
+void postOrderBST(BinarySearchTree *bst) {
+    [bst postOrderTraversal:bst.root];
 }
