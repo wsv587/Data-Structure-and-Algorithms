@@ -58,7 +58,7 @@
         NSComparisonResult res = [self.comparer compare:node.data with:data];
         if (res == NSOrderedAscending) { // 升序
             node = node.right;
-        } else if (res == NSOrderedDescending) {
+        } else if (res == NSOrderedDescending) { // 降序
             node = node.left;
         } else {
             return node;
