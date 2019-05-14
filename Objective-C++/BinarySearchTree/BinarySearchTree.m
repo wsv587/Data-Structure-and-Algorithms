@@ -30,6 +30,7 @@
                 node = node.right;
                 result = NSOrderedAscending;
             } else { //相等
+                node.data = data;
                 return;
             }
         }
