@@ -194,11 +194,11 @@
                 parent.right = leftMax;
             }
             // 更新新node节点的左右子树为删除的node的左右子树
-            leftMax.left = left;
-            leftMax.right = right;
+            leftMax.left = node.left;
+            leftMax.right = node.right;
             // 更新node左右子树的parent为新的node
-            left.parent = leftMax;
-            right.parent = leftMax;
+            node.left.parent = leftMax;
+            node.right.parent = leftMax;
             // 删除对node的引用 上面更新了parent的left、right、左右子树的parent，则node会自动被释放，此步已完成
             
         }
@@ -309,11 +309,11 @@
             parent.right = leftMax;
         }
         // 更新新node节点的左右子树为删除的node的左右子树
-        leftMax.left = left;
-        leftMax.right = right;
+        leftMax.left = node.left;
+        leftMax.right = node.right;
         // 更新node左右子树的parent为新的node
-        left.parent = leftMax;
-        right.parent = leftMax;
+        node.left.parent = leftMax;
+        node.right.parent = leftMax;
         // 删除对node的引用 上面更新了parent的left、right、左右子树的parent，则node会自动被释放，此步已完成
         
     }
@@ -336,10 +336,10 @@
     BinaryNode *left = node.left;
     BinaryNode *right = node.right;
     
-    if (left == nil && right == nil) {                          // 删除的节点是度为0的非根节点
-        if (parent == nil) {                                    // 删除的是根节点
+    if (left == nil && right == nil) {                          // 删除的节点是度为0的节点
+        if (parent == nil) {                                    // 删除的节点是度为0的根节点
             self.root = nil;
-        } else {                                                // 删除的是叶子节点
+        } else {                                                // 删除的节点是度为0的叶子节点
             // 更新parent的子树（为node的子树）
             if (parent.left == node) {                          // 清空parent对叶子节点node的引用
                 parent.left = nil;
@@ -356,7 +356,7 @@
          }
          */
         // node.parent = nil; // 清空node对父节点的引用 (不需要这么做，node无引用会被自动释放)
-    } else if (left == nil || right == nil) { // 删除的节点是度为1的非根节点
+    } else if (left == nil || right == nil) { // 删除的节点是度为1的节点
         // 更新parent的子树（为node的子树）
         // 如果删除的是根节点，那么parent = nil; OC对nil操作无效，所以此处删除根节点和非根节点的代码可以一样
         if (parent.left == node) {
@@ -425,6 +425,55 @@
     self.size -= 1;
 }
 
+- (BOOL)remove4:(NSObject *)data {
+    if (self.root == nil || data == nil) {
+        return NO;
+    }
+    BinaryNode *node = [self node:data];
+    if (node == nil) {
+        return NO;
+    }
+    
+    self.size -= 1; // size减一
+    if (node.left != nil && node.right != nil) { // 度为2的节点
+        // 1.查找node的前驱或后继作为新的node（本例以前驱为例）
+        BinaryNode *predecessor = [self predecessor:node];
+        // 2.把node前驱的数据覆盖到node上（这样node的parent、left、right等都不需要变，妙哉）
+        node.data = predecessor.data;
+        // 3.删除node的前驱
+        node = predecessor;
+    }
+    
+    if (node.left == nil && node.right == nil) { // 度为0的节点
+        if (node.parent == nil) { // 删除的是根节点
+            self.root = nil;
+        }
+        if (node == node.parent.left) {
+            node.parent.left = nil;
+        } else {
+            node.parent.right = nil;
+        }
+//        return YES;
+    } else { // 删除的是度为1的节点
+        if (node.parent == nil) { // 删除的是根节点
+            self.root = node.left ?: node.right;
+            self.root.parent = nil;
+        } else {
+            if (node == node.parent.left) {
+                node.parent.left = node.left;
+                node.left.parent = node.parent;
+            } else {
+                node.parent.right = node.right;
+                node.right.parent = node.parent;
+            }
+        }
+        
+    }
+    
+    return YES;
+}
+
+
 /**
  * 查找某棵树最大的节点
  */
@@ -455,31 +504,44 @@
 }
 
 /**
- * 查找前驱
- * root 节点
- * return root节点的前驱
+ * 查找给定节点的前驱
+ * node 给定的节点
+ * return 给定节点的前驱
  */
-- (BinaryNode *)predecessor:(BinaryNode *)root {
-    if (root == nil) {
+- (BinaryNode *)predecessor:(BinaryNode *)node {
+    if (node == nil) {
         return nil;
     }
-    BinaryNode *node = root;
-    while(node.right) {
-        node = node.right;
+    BinaryNode *left = node.left;
+    while(left.right) {
+        left = left.right;
     }
-    return node;
+    if (left) {
+        return left;
+    }
+    while (node == node.parent.left) {
+        node = node.parent;
+    }
+    return node.parent;
 }
 
 /**
- * 查找后继
- root
+ * 查找给定节点的后继
+ * node 给定的节点
+ * return 给定节点的后继
  */
-- (BinaryNode *)successor:(BinaryNode *)root {
-    if (root == nil) {
+- (BinaryNode *)successor:(BinaryNode *)node {
+    if (node == nil) {
         return nil;
     }
-    BinaryNode *node = root;
-    while(node.left) {
+    BinaryNode *right = node.right;
+    while (right.left) {
+        right = right.left;
+    }
+    if (right) {
+        return right;
+    }
+    while(node == node.parent.right) {
         node = node.left;
     }
     return node;
