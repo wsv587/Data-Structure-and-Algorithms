@@ -12,4 +12,6 @@
 - (void)add:(NSObject *)data;
 - (void)remove:(NSObject *)data;
 - (BOOL)contains:(NSObject *)data;
+
+- (void)remove3:(NSObject *)data;
 @end

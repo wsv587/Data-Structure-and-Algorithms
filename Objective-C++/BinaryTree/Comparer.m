@@ -23,11 +23,11 @@
     }
     if ([obj1 isKindOfClass:[NSNumber class]]) {
         NSInteger val1 = [(NSNumber *)obj1 integerValue];
-        NSInteger val2 = [(NSNumber *)obj1 integerValue];
+        NSInteger val2 = [(NSNumber *)obj2 integerValue];
         return [self p_compare:val1 with:val2];
     } else if ([obj1 isKindOfClass:[NSString class]]) {
         NSInteger val1 = [(NSString *)obj1 integerValue];
-        NSInteger val2 = [(NSString *)obj1 integerValue];
+        NSInteger val2 = [(NSString *)obj2 integerValue];
         return [self p_compare:val1 with:val2];
     } else {
         NSAssert(0, @"对象不可比较");
