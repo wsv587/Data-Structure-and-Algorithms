@@ -11,7 +11,7 @@
 
 @implementation BinarySearchTree
 
-- (void)add:(NSObject *)data {
+- (BinaryNode *)add:(NSObject *)data {
     BinaryNode *newNode = [BinaryNode nodeWithData:data parent:nil];
     if (self.size == 0) {
         self.root = newNode;
@@ -31,7 +31,7 @@
                 result = NSOrderedAscending;
             } else { //相等
                 node.data = data;
-                return;
+                return nil;
             }
         }
         
@@ -43,6 +43,7 @@
         newNode.parent = parent;
     }
     self.size += 1;
+    return newNode;
 }
 
 // 本质上，搜索二叉树的节点删除操作就是对度为0或1的节点的删除和转移

@@ -9,7 +9,7 @@
 #import "BinaryTree.h"
 
 @interface BinarySearchTree : BinaryTree
-- (void)add:(NSObject *)data;
+- (BinaryNode *)add:(NSObject *)data;
 - (void)remove:(NSObject *)data;
 - (BOOL)contains:(NSObject *)data;
 
