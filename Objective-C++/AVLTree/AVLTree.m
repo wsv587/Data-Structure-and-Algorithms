@@ -52,6 +52,9 @@
             [self rotateLeft:pNode];
             [self rotateRight:gNode];
         }
+        // 先后更新g、p的高度
+        [gNode updateHeight];
+        [pNode updateHeight];
     } else { // R
         AVLNode *pNode = (AVLNode *)gNode.right;
         if (pNode.factor > 0) { // RL
@@ -60,6 +63,9 @@
         } else { // RR
             [self rotateLeft:gNode];
         }
+        // 先后更新g、p的高度
+        [gNode updateHeight];
+        [pNode updateHeight];
     }
 }
 
