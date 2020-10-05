@@ -474,6 +474,57 @@
     return YES;
 }
 
+- (BOOL)remove5:(NSObject *)data {
+    if (self.root == nil || data == nil) {
+        return NO;
+    }
+    BinaryNode *node = [self node:data];
+    if (node == nil) {
+        return NO;
+    }
+    
+    self.size -= 1; // size减一
+    if (node.left != nil && node.right != nil) { // 度为2的节点
+        // 1.查找node的前驱或后继作为新的node（本例以前驱为例）
+        BinaryNode *predecessor = [self predecessor:node];
+        // 2.把node前驱的数据覆盖到node上（这样node的parent、left、right等都不需要变，妙哉）
+        node.data = predecessor.data;
+        // 3.删除node的前驱
+        node = predecessor;
+    }
+    
+    // 删除node节点（node度必然是0或1）
+    BinaryNode *replacement = node.left ? node.left : node.right;
+    if (replacement == nil) { // 度为0的节点 等价于：node.left == nil && node.right == nil
+        if (node.parent == nil) { // 删除的是根节点
+            self.root = nil;
+        }
+        if (node == node.parent.left) {
+            node.parent.left = nil;
+        } else {
+            node.parent.right = nil;
+        }
+        [self afterRemove:node];
+    } else { // 删除的是度为1的节点
+        replacement.parent = node.parent;
+        if (node.parent == nil) { // 删除的是根节点
+            self.root = replacement; // self.root = node.left ?: node.right;
+            self.root.parent = nil;
+        } else {
+            if (node == node.parent.left) {
+                node.parent.left = node.left;
+                // node.left.parent = node.parent; 可以注释，等价于上面：replacement.parent = node.parent;
+            } else {
+                node.parent.right = node.right;
+                // node.right.parent = node.parent; 可以注释，等价于上面：replacement.parent = node.parent;
+            }
+        }
+        // 此处可以传replacement
+        [self afterRemove:replacement];
+    }
+    return YES;
+}
+
 
 /**
  * 查找某棵树最大的节点
@@ -595,4 +646,8 @@
 //    return nil; // 没找到则说明删除的节点不存在
 //
 //}
+
+- (void)afterAdd:(BinaryNode *)node {}
+- (void)afterRemove:(BinaryNode *)node {}
+
 @end

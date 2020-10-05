@@ -14,4 +14,7 @@
 - (BOOL)contains:(NSObject *)data;
 
 - (void)remove3:(NSObject *)data;
+
+- (void)afterAdd:(BinaryNode *)node;
+- (void)afterRemove:(BinaryNode *)node;
 @end

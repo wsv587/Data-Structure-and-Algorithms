@@ -22,4 +22,7 @@
 - (instancetype)initWithData:(NSObject *)data parent:(BinaryNode *)parent;
 // 节点的数据必须是可以比较大小的，比如NSNumber
 - (NSComparisonResult)compare:(BinaryNode *)node;
+
+- (BOOL)isLeftChild;
+- (BOOL)isRightChild;
 @end

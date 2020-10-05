@@ -32,4 +32,12 @@
 - (NSString *)description {
     return [NSString stringWithFormat:@"%@",self.data];
 }
+
+- (BOOL)isLeftChild {
+    return self == self.parent.left;
+}
+
+- (BOOL)isRightChild {
+    return self == self.parent.right;
+}
 @end
